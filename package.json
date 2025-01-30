@@ -7,9 +7,6 @@
     "design system",
     "prototyping"
   ],
-  "prototype": {
-    "serviceName": "111 Online"
-  },
   "bugs": {
     "url": "https://github.com/NHS-DUEC/111-prototype-kit.git/issues"
   },
