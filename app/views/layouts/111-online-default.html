@@ -1,5 +1,57 @@
+{% from 'macros/attributes.njk' import nhsukAttributes %}
+{% from 'components/radios/macro.njk' import radios with context %}
+{% from 'components/button/macro.njk' import button %}
+{% from 'components/details/macro.njk' import details %}
+{% from 'components/inset-text/macro.njk' import insetText %}
+{% from "components/111-online/callout/macro.njk" import callout with context %}
+{% from "components/111-online/footer/macro.njk" import footer as appFooter with context %}
+
+{% set title = page.title | d('title not set') %}
+
+{% set _layout = {
+  content_primary: {
+    id: page.config.content_secondary.id | d('content-primary'),
+    width: page.config.content_primary.width | d('two-thirds')
+  },
+  content_secondary: {
+    id: page.config.content_secondary.id | d('content-secondary'),
+    width: page.config.content_secondary.width | d('one-third')
+  }
+} %}
+
 {% extends "layouts/default.html" %}
-{% from "components/111-online/footer/macro.njk" import footer as appFooter %}
+
+{% block main %}
+  <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="main-content" role="main">
+
+      {% block content_header %}{% endblock content_header %}
+
+      <div class="nhsuk-grid-row">
+
+        <div class="nhsuk-grid-column-{{ _layout.content_primary.width }}" id="{{ _layout.content_primary.id }}">
+          {% block content_primary %}{% endblock %}
+        </div>
+        <!-- /.nhsuk-grid-column-{{ _layout.content_primary.width }} -->
+
+        {% if content_secondary %}
+          <div class="nhsuk-grid-column-{{ _layout.content_secondary.width }}" id="{{ _layout.content_secondary.id }}">
+            {% block content_secondary %}{% endblock %}
+          </div>
+          <!-- /.nhsuk-grid-column-{{ _layout.content_secondary.width }} -->
+        {% endif %}
+
+      </div>
+      <!-- /.nhsuk-grid-column-grid-row -->
+
+      {% block content_footer %}{% endblock content_footer %}
+
+    </main>
+    <!-- /.nhsuk-main-wrapper -->
+  </div>
+  <!-- /.nhsuk-width-container -->
+{% endblock main %}
+
 {% block footer %}
   {{ appFooter() }}
-{% endblock %}
+{% endblock footer %}

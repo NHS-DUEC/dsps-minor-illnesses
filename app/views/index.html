@@ -1,24 +1,13 @@
 {% extends "layouts/111-online-default.html" %}
 
-{% set title = "Prototype" %}
+{% set page = {
+  title: 'Prototype'
+} %}
 
-{% block main %}
-  <div class="nhsuk-width-container">
-    <main class="nhsuk-main-wrapper" id="main-content" role="main">
-      <h1 class="nhsuk-heading-xl">{{ serviceName + " prototype" }}</h1>
+{% block content_primary %}
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum alias numquam sint ipsum laborum voluptatem minima aut sapiente doloremque ad at sed recusandae facilis dolores quae, officiis iure impedit.</p>
+{% endblock content_primary %}
 
-      {# {{ button({
-        text: "View prototype",
-        href: "#",
-        classes: "nhsuk-u-margin-bottom-9"
-      }) }} #}
-
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-two-thirds">
-
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum alias numquam sint ipsum laborum voluptatem minima aut sapiente doloremque ad at sed recusandae facilis dolores quae, officiis iure impedit.</p>
-
-        </div>
-      </main>
-    </div>
-  {% endblock %}
+{% block content_secondary %}
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum alias numquam sint ipsum laborum voluptatem minima aut sapiente doloremque ad at sed recusandae facilis dolores quae, officiis iure impedit.</p>
+{% endblock content_secondary %}
