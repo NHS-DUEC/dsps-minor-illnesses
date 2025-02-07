@@ -1,8 +1,12 @@
-{% extends "layouts/111-online-default.html" %}
-
 {% set page = {
-  title: 'Prototype'
+  title: 'Page title here',
+  content_primary: {},
+  content_secondary: {
+    visible: false
+  }
 } %}
+
+{% extends page.layout | d('layouts/111-online/default.html') %}
 
 {% block content_primary %}
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum alias numquam sint ipsum laborum voluptatem minima aut sapiente doloremque ad at sed recusandae facilis dolores quae, officiis iure impedit.</p>

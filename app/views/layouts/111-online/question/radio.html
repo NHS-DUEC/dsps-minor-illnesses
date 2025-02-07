@@ -1,0 +1,29 @@
+{% extends 'layouts/111-online/default.html' %}
+
+{% block content_primary %}
+
+  <h1 class="nhsuk-heading-l">
+    {{ page.question.text | d('Question text')}}
+  </h1>
+
+  {% if page.callout %}{% endif %}
+  {# endif page.callout #}
+
+  {{
+    radios({
+      idPrefix: "example",
+      name: "example",
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    } | objectMerge(page.question.radios | d({})))
+  }}
+
+{% endblock content_primary %}

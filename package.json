@@ -55,6 +55,7 @@
     "express-rate-limit": "^7.1.0",
     "express-session": "^1.13.0",
     "lodash": "^4.17.21",
+    "mergician": "^2.0.2",
     "nhsuk-decorated-components": "^0.1.0",
     "nhsuk-frontend": "^9.0.0",
     "nhsuk-prototype-rig": "file:./",

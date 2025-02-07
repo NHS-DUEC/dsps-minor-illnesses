@@ -1,3 +1,6 @@
+// https://jhildenbiddle.github.io/mergician/
+import { mergician } from 'mergician';
+
 /**
  * Prototype specific filters for use in Nunjucks templates.
  *
@@ -24,6 +27,17 @@ export default (env) => {
    *
    * {{ "World" | sayHello }} => Hello, World!
    */
+
+  /**
+   *
+   * @param {...objects} objects - This collects all passed objects into an array.
+   * @returns Object             - A deep merge of the passed objects
+   */
+  filters.objectMerge = function objectMerge(...objects) {
+    return mergician({
+      appendArrays: false
+    })(...objects)
+  }
 
   // Keep the following line to return your filters to the app
   return filters
