@@ -1,0 +1,36 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Can we contact you by phone?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  callout: {
+    text: 'We will contact you during office hours',
+    position: 'top',
+    hide: true
+  },
+  radios: {
+    items: [
+      {
+        text: 'Yes'
+      }, {
+        text: 'No'
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Save and continue'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file %}
