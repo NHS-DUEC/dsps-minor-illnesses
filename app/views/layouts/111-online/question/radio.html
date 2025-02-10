@@ -2,14 +2,14 @@
 
 {% block content_primary %}
 
-  <form action="">
+  <form action="{{ page.form.action | d('') }}">
 
     <h1 class="nhsuk-heading-l">
       {{ question.text | d(page.title | d('Question text is required for this template')) }}
     </h1>
 
     {% set callout_content %}
-      {% if question.callout %}
+      {% if question.callout and not question.callout.hide %}
         {% call callout({ classes: 'app-callout--info' } | objectMerge(question.callout)) %}
           {% if question.callout.text %}
             <p>{{ question.callout.text }}</p>
@@ -22,9 +22,7 @@
 
     {% if calloutHTML or question.callout %}
       {% if not question.callout.position or question.callout.position == 'top' %}
-        {% if not question.callout.hide %}
         {{ calloutHTML | d(callout_content) | safe }}
-        {% endif %}
       {% endif %}
     {% endif %}
 
@@ -48,9 +46,7 @@
 
     {% if calloutHTML or question.callout %}
       {% if question.callout.position == 'bottom' %}
-        {% if not question.callout.hide %}
         {{ calloutHTML | d(callout_content) | safe }}
-        {% endif %}
       {% endif %}
     {% endif %}
 
