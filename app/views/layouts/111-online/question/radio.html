@@ -2,28 +2,68 @@
 
 {% block content_primary %}
 
-  <h1 class="nhsuk-heading-l">
-    {{ page.question.text | d('Question text')}}
-  </h1>
+  <form action="">
 
-  {% if page.callout %}{% endif %}
-  {# endif page.callout #}
+    <h1 class="nhsuk-heading-l">
+      {{ question.text | d(page.title | d('Question text is required for this template')) }}
+    </h1>
 
-  {{
-    radios({
-      idPrefix: "example",
-      name: "example",
-      items: [
-        {
-          value: "yes",
-          text: "Yes"
-        },
-        {
-          value: "no",
-          text: "No"
-        }
-      ]
-    } | objectMerge(page.question.radios | d({})))
-  }}
+    {% set callout_content %}
+      {% if question.callout %}
+        {% call callout({ classes: 'app-callout--info' } | objectMerge(question.callout)) %}
+          {% if question.callout.text %}
+            <p>{{ question.callout.text }}</p>
+          {% elseif question.callout.html %}
+            {{ question.callout.html | d('Nothing passed to callout') | safe }}
+          {% endif %}
+        {% endcall %}
+      {% endif %}
+    {% endset %}
+
+    {% if calloutHTML or question.callout %}
+      {% if not question.callout.position or question.callout.position == 'top' %}
+        {% if not question.callout.hide %}
+        {{ calloutHTML | d(callout_content) | safe }}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+    {% block question_prepend %}{% endblock %}
+
+    {{
+      radios({
+        decorate: page.title | d('radios') | slugify,
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      } | objectMerge(question.radios | d({})))
+    }}
+
+    {% if calloutHTML or question.callout %}
+      {% if question.callout.position == 'bottom' %}
+        {% if not question.callout.hide %}
+        {{ calloutHTML | d(callout_content) | safe }}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+    {% block question_append %}{% endblock %}
+
+    {% block question_actions %}
+      {{
+        button({
+          text: 'Save and continue'
+        })
+      }}
+    {% endblock %}
+
+  </form>
 
 {% endblock content_primary %}

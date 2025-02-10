@@ -1,15 +1,28 @@
 {% set page = {
-  layout: 'layouts/111-online/question/radio.html',
-  question: {
-    radios: {
-      items: [
-        {
-          text: 'Yup',
-          value: 'yes'
-        }
-      ]
-    }
+  title: 'Can we contact you by phone?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
   }
 } %}
 
-{% extends page.layout %}
+{% set question = {
+  text: page.title,
+  callout: {
+    text: 'We will contact you during office hours',
+    position: 'top',
+    hide: false
+  },
+  radios: {
+    items: [
+      {
+        text: 'Yes',
+        value: 'yes'
+      }, {
+        text: 'No',
+        value: 'no'
+      }
+    ]
+  }
+} %}
+
+{% extends page.layout.file %}

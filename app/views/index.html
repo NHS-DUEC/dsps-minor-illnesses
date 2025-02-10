@@ -9,9 +9,21 @@
 {% extends page.layout | d('layouts/111-online/default.html') %}
 
 {% block content_primary %}
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum alias numquam sint ipsum laborum voluptatem minima aut sapiente doloremque ad at sed recusandae facilis dolores quae, officiis iure impedit.</p>
-{% endblock content_primary %}
+  <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-6">111 Online &ndash; Prototype Kit</h1>
 
-{% block content_secondary %}
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eum alias numquam sint ipsum laborum voluptatem minima aut sapiente doloremque ad at sed recusandae facilis dolores quae, officiis iure impedit.</p>
-{% endblock content_secondary %}
+  <h2 class="nhsuk-heading-m">Template examples</h2>
+
+  {% set links = [
+    {
+      text: 'Choose one from a list',
+      href: './examples/single-choice'
+    }
+  ] %}
+
+  {{
+    contentsList({
+      items: links
+    })
+  }}
+
+{% endblock content_primary %}

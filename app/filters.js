@@ -12,6 +12,9 @@ import { mergician } from 'mergician';
  * @returns {object} Filters
  */
 export default (env) => {
+ // If you need access to an internal nunjucks filter you can use env
+  // see the example below for 'safe' which is used in 'filters.log'
+  const nunjucksSafe = env.getFilter('safe');
   const filters = {}
 
   /**
@@ -37,6 +40,10 @@ export default (env) => {
     return mergician({
       appendArrays: false
     })(...objects)
+  }
+
+  filters.log = function (data) {
+    return nunjucksSafe(`<script>console.log(${JSON.stringify(data, null, '\t')});</script>`);
   }
 
   // Keep the following line to return your filters to the app

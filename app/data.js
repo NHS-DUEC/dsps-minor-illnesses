@@ -14,5 +14,5 @@ export default {
       name: 'Demonstration',
       description: 'Show message about feature flags on the home page.'
     }
-  }
+  },
 }
