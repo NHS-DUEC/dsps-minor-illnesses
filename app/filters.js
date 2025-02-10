@@ -1,5 +1,5 @@
 // https://jhildenbiddle.github.io/mergician/
-import { mergician } from 'mergician';
+import { mergician } from 'mergician'
 
 /**
  * Prototype specific filters for use in Nunjucks templates.
@@ -12,9 +12,9 @@ import { mergician } from 'mergician';
  * @returns {object} Filters
  */
 export default (env) => {
- // If you need access to an internal nunjucks filter you can use env
+  // If you need access to an internal nunjucks filter you can use env
   // see the example below for 'safe' which is used in 'filters.log'
-  const nunjucksSafe = env.getFilter('safe');
+  const nunjucksSafe = env.getFilter('safe')
   const filters = {}
 
   /**
@@ -43,7 +43,9 @@ export default (env) => {
   }
 
   filters.log = function (data) {
-    return nunjucksSafe(`<script>console.log(${JSON.stringify(data, null, '\t')});</script>`);
+    return nunjucksSafe(
+      `<script>console.log(${JSON.stringify(data, null, '\t')});</script>`
+    )
   }
 
   // Keep the following line to return your filters to the app
