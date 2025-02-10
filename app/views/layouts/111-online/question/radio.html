@@ -60,7 +60,7 @@
       {{
         button({
           text: 'Save and continue'
-        })
+        } | objectMerge(question.actions.button | d({})))
       }}
     {% endblock %}
 

@@ -1,3 +1,7 @@
+{# 
+  Page configuration
+  ----------------------------------------------------
+#}
 {% set page = {
   title: 'Can we contact you by phone?',
   layout: {
@@ -5,6 +9,10 @@
   }
 } %}
 
+{# 
+  Question and content configuration
+  ----------------------------------------------------
+#}
 {% set question = {
   text: page.title,
   callout: {
@@ -22,7 +30,16 @@
         value: 'no'
       }
     ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
   }
 } %}
 
+{# 
+  This sets which layout file to use
+  ----------------------------------------------------
+#}
 {% extends page.layout.file %}
