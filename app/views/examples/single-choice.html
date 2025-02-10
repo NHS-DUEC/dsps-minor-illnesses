@@ -1,7 +1,5 @@
-{#
-  Page configuration
-  ----------------------------------------------------
-#}
+{# Page configuration
+---------------------------------------------------- #}
 {% set page = {
   title: 'Can we contact you by phone?',
   layout: {
@@ -9,12 +7,9 @@
   }
 } %}
 
-{#
-  Question and content configuration
-  ----------------------------------------------------
-#}
+{# Question and content configuration
+---------------------------------------------------- #}
 {% set question = {
-  text: page.title,
   callout: {
     text: 'We will contact you during office hours',
     position: 'top',
@@ -23,23 +18,19 @@
   radios: {
     items: [
       {
-        text: 'Yes',
-        value: 'yes'
+        text: 'Yes'
       }, {
-        text: 'No',
-        value: 'no'
+        text: 'No'
       }
     ]
   },
   actions: {
     button: {
-      text: 'Next'
+      text: 'Save and continue'
     }
   }
 } %}
 
-{#
-  This sets which layout file to use
-  ----------------------------------------------------
-#}
+{# This sets which layout file to use
+---------------------------------------------------- #}
 {% extends page.layout.file %}
