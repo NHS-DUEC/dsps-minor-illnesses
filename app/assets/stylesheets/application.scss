@@ -1,0 +1,15 @@
+// --------------------------------------------------------
+// NHSUK Frontend package (node_modules)
+// --------------------------------------------------------
+@import "nhsuk-frontend/packages/nhsuk";
+
+// --------------------------------------------------------
+// NHS 111 "Shared Frontend" SCSS components
+// --------------------------------------------------------
+@import "../NHS111.Shared.Frontend/src/scss/components/callout.scss";
+@import "../NHS111.Shared.Frontend/src/scss/components/button.scss";
+
+// --------------------------------------------------------
+// App/Prototype specific components
+// --------------------------------------------------------
+@import "../../views/components/111-online/footer/footer";
