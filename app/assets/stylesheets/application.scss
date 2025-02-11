@@ -8,8 +8,11 @@
 // --------------------------------------------------------
 @import "../NHS111.Shared.Frontend/src/scss/components/callout.scss";
 @import "../NHS111.Shared.Frontend/src/scss/components/button.scss";
+@import "../NHS111.Shared.Frontend/src/scss/components/section-break.scss";
+@import "../NHS111.Shared.Frontend/src/scss/components/call-to-action.scss";
 
 // --------------------------------------------------------
 // App/Prototype specific components
 // --------------------------------------------------------
 @import "../../views/components/111-online/footer/footer";
+@import "../../views/components/111-online/callout/callout";

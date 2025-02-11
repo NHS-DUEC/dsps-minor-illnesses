@@ -1,0 +1,51 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Get help today',
+  layout: {
+    file: 'layouts/111-online/disposition.html'
+  }
+} %}
+
+{# Content configuration
+---------------------------------------------------- #}
+
+{% set disposition = {
+  callToAction: {
+    text: page.title
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file %}
+
+{% block content_disposition %}
+
+  {# <hr class="app-section-break nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-4"> #}
+
+  <h2 class="nhsuk-heading-l">Recommended service</h2>
+
+  <h3 class="nhsuk-heading-m">Pharmacist consultation service</h3>
+
+  <p>Refer yourself to a pharmacist for a one-to-one consultation in a private room or over the phone. You can get advice, treatment or a referral to another NHS service. If appropriate, pharmacists may give antibiotics for a small number of conditions.</p>
+
+  <p class="nhsuk-hint nhsuk-u-margin-bottom-4">This service needs some more details from you to find your NHS number.</p>
+
+  {{
+    actionLink({
+      text: "Refer me to a pharmacist",
+      href: "#"
+    })
+  }}
+
+  <hr class="app-section-break nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-4">
+
+  {{
+    details({
+      text: "Why should I use the pharmacist consultation service?",
+      HTML: "<p>Content here</p>"
+    })
+  }}
+
+{% endblock content_disposition %}

@@ -1,0 +1,44 @@
+{% extends 'layouts/111-online/default.html' %}
+
+{% block content_primary %}
+
+  {% block call_to_action %}
+    {{
+      callToAction({
+        text: disposition.callToAction.text | d('Call to action text not set')
+      })
+    }}
+  {% endblock %}
+
+  {% set callout_content %}
+  {% if disposition.callout and not disposition.callout.hide %}
+    {% call callout({ classes: 'app-callout--info' } | objectMerge(disposition.callout)) %}
+    {% if disposition.callout.heading %}
+      <h1 class="nhsuk-heading-l app-callout__heading{%- if disposition.callout.heading.classes %} {{ disposition.callout.heading.classes }}{% endif %}">{{ disposition.callout.heading.text }}</h1>
+    {% endif %}
+    {% if disposition.callout.text %}
+      <p>{{ disposition.callout.text }}</p>
+    {% elseif disposition.callout.html %}
+      {{ disposition.callout.html | d('Nothing passed to callout') | safe }}
+    {% endif %}
+    {% endcall %}
+  {% endif %}
+  {% endset %}
+
+  {% if calloutHTML or disposition.callout %}
+    {% if not disposition.callout.position or disposition.callout.position == 'top' %}
+      {{ calloutHTML | d(callout_content) | safe }}
+    {% endif %}
+  {% endif %}
+
+  {% block content_disposition %}
+    <!-- disposition content -->
+  {% endblock %}
+
+  {% if calloutHTML or disposition.callout %}
+    {% if disposition.callout.position == 'bottom' %}
+      {{ calloutHTML | d(callout_content) | safe }}
+    {% endif %}
+  {% endif %}
+
+{% endblock content_primary %}
