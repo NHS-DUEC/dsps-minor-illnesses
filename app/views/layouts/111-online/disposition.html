@@ -5,8 +5,8 @@
   {% block call_to_action %}
     {{
       callToAction({
-        text: disposition.callToAction.text | d('Call to action text not set')
-      })
+        text: 'Call to action text not set'
+      } | objectMerge(disposition.callToAction | d({})))
     }}
   {% endblock %}
 
