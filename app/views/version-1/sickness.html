@@ -1,7 +1,7 @@
 {# Page configuration
 ---------------------------------------------------- #}
 {% set page = {
-  title: 'Can we contact you by phone?',
+  title: 'Are you feeling sick or being sick (vomiting) now?',
   layout: {
     file: 'layouts/111-online/question/radio.html'
   }
@@ -15,13 +15,15 @@
       {
         text: 'Yes'
       }, {
+        text: "I'm not sure"
+      }, {
         text: 'No'
       }
     ]
   },
   actions: {
     button: {
-      text: 'Save and continue'
+      text: 'Next'
     }
   }
 } %}

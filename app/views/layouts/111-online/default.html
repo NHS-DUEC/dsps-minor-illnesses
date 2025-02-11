@@ -33,7 +33,7 @@
     </div>
     <!-- /.nhsuk-grid-column-{{ _layout.content_primary.width }} -->
 
-    {% if page.content_secondary.visible %}
+    {% if _layout.content_secondary.visible %}
       <div class="nhsuk-grid-column-{{ _layout.content_secondary.width }}" id="{{ _layout.content_secondary.id }}">
         {% block content_secondary %}{% endblock %}
       </div>
