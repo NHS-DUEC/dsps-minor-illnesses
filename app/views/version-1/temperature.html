@@ -1,0 +1,39 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Have you had a high temperature in the last 12 hours?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  callout: {
+    text: "Your tummy, chest or back may feel hot and sweaty when you touch it or you may feel cold and shivery."
+  },
+  radios: {
+    items: [
+      {
+        text: "I'm hot and sweaty or cold and shivery or both"
+      }, {
+        text: "I have taken my temperature and it's high"
+      }, {
+        text: "I'm not sure"
+      }, {
+        text: "No"
+      }
+
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file %}
