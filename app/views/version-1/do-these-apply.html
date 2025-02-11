@@ -1,0 +1,38 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Do either of these apply to you?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  callout: {
+    text: "We're checking for signs of serious infections after travel outside of the United Kingdom in the last year."
+  },
+  radios: {
+    items: [
+      {
+        text: 'I was bitten in a country outside the UK'
+      }, {
+        text: 'I have been advised to use methods to prevent malaria in the last 12 months'
+      }, {
+        text: "I'm not sure"
+      }, {
+        text: 'No'
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file %}

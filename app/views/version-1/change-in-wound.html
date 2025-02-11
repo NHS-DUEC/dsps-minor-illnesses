@@ -1,0 +1,36 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Is there a rapidly spreading redness or change in skin colour around the wound?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  callout: {
+    text: "We're checking for signs of a fast spreading infection within 4 to 6 hours of the injury. You may see red streaks spreading out or up from the wound. This can be harder to see on brown or black skin and skin may appear darker than normal."
+  },
+  radios: {
+    items: [
+      {
+        text: 'Yes'
+      }, {
+        text: "I'm not sure"
+      }, {
+        text: 'No'
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file %}
