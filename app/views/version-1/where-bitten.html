@@ -1,0 +1,38 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Is the bite or sting in any of these areas?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  radios: {
+    items: [
+      {
+        text: "My eyeball"
+      }, {
+        text: "Inside my mouth or on the lips"
+      }, {
+        text: "My arm, hand, leg or foot "
+      }, {
+        text: "I'm not sure"
+      }, {
+        text: "No"
+      }
+
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file %}
