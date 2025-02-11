@@ -1,0 +1,39 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'What were you stung or bitten by?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  radios: {
+    items: [
+      {
+        text: 'A person'
+      }, {
+        text: 'A snake'
+      }, {
+        text: 'An insect or spider'
+      }, {
+        text: 'A sting from a water creature (including stingray, jellyfish, weever fish, sea urchins)'
+      }, {
+        text: 'A bite from a fish or water creature (including shellfish and eels)'
+      }, {
+        text: "I'm not sure"
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file %}
