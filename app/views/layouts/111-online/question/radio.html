@@ -2,7 +2,7 @@
 
 {% block content_primary %}
 
-  <form action="{{ page.form.action | d('') }}">
+  <form method="post">
 
     <h1 class="nhsuk-heading-l">
       {{ question.text | d(page.title | d('Question text is required for this template')) }}
