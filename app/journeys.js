@@ -17,6 +17,10 @@ export function version1(req) {
     '/version-1/change-in-wound': {},
     '/version-1/do-these-apply': {},
     '/version-1/disposition': {},
+    '/version-1/where-are-you-now': {},
+    '/version-1/age': {},
+    '/version-1/sex': {},
+    '/version-1/categories': {}
   }
   return wizard(journey, req)
 }

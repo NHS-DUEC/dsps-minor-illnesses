@@ -1,0 +1,33 @@
+{% set page = {
+  title: 'What is your age?'
+} %}
+
+{% extends 'layouts/111-online/default.html' %}
+
+{% block content_primary %}
+
+  <h1 class="nhsuk-heading-l">{{ page.title }}</h1>
+
+  <form method="post" novalidate="novalidate">
+
+    {{ input({
+      decorate: 'age',
+      classes: "nhsuk-input--width-3"
+    }) }}
+
+    {{
+      callout({
+        HTML: "<p>If you are doing this for someone else, enter their age. If they are under 5 call 111.</p>",
+        classes: "app-callout--info"
+      })
+    }}
+
+    {{
+      button({
+        text: 'Next'
+      })
+    }}
+
+  </form>
+
+{% endblock content_primary %}

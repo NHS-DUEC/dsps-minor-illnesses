@@ -1,5 +1,10 @@
 {% set page = {
-  title: 'Check it’s not an emergency'
+  title: 'Check it’s not an emergency',
+  layout: {
+    content_primary: {
+      width: 'full'
+    }
+  }
 } %}
 
 {% set bodyClasses = "module-zero" %}
@@ -8,56 +13,63 @@
 
 {% block content_primary %}
 
-  <div class="module-zero-container nhsuk-u-margin-bottom-4">
+  <div class="app-callout app-callout--alert app-callout--alert-bordered nhsuk-u-reading-width">
 
-    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">
-      Check it’s not an emergency
-    </h1>
-
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4 app-u-color-red">Check it's not an emergency</h1>
     <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Call 999 now for any of these:</h2>
 
-    <ul>
+    <ul class="nhsuk-list nhsuk-list--bullet app-two-tone-list">
       <li>
-        <b>signs of a heart attack</b>
-        <span>chest pain, pressure, heaviness, tightness or squeezing across your chest</span>
+        <b class="app-two-tone-list__highlight">signs of a heart attack&nbsp;</b>
+        <br aria-hidden="true">
+        chest pain, pressure, heaviness, tightness or squeezing across the chest
       </li>
       <li>
-        <b>signs of a stroke</b>
-        <span>face dropping on one side, can’t hold both arms up, difficulty speaking</span>
+        <b class="app-two-tone-list__highlight">signs of a stroke&nbsp;</b>
+        <br aria-hidden="true">
+        face dropping on one side, can’t hold both arms up, difficulty speaking
       </li>
       <li>
-        <b>sudden confusion (delirium)</b>
-        <span>cannot be sure of own name or age</span>
+        <b class="app-two-tone-list__highlight">sudden confusion (delirium)&nbsp;</b>
+        <br aria-hidden="true">
+        cannot be sure of own name or age
       </li>
       <li>
-        <b>suicide attempt</b>
-        <span>by taking something or self-harming</span>
+        <b class="app-two-tone-list__highlight">suicide attempt&nbsp;</b>
+        <br aria-hidden="true">
+        by taking something or self-harming
       </li>
       <li>
-        <b>severe difficulty breathing</b>
-        <span>not being able to get words out, choking or gasping</span>
+        <b class="app-two-tone-list__highlight">severe difficulty breathing&nbsp;</b>
+        <br aria-hidden="true">
+        not being able to get words out, choking or gasping
       </li>
       <li>
-        <b>heavy bleeding</b>
-        <span>spraying, pouring or enough to make a puddle</span>
+        <b class="app-two-tone-list__highlight">heavy bleeding&nbsp;</b>
+        <br aria-hidden="true">
+        spraying, pouring or enough to make a puddle
       </li>
       <li>
-        <b>severe injuries</b>
-        <span>after a serious accident</span>
+        <b class="app-two-tone-list__highlight">severe injuries&nbsp;</b>
+        <br aria-hidden="true">
+        after a serious accident
       </li>
       <li>
-        <b>seizure (fit)</b>
-        <span>shaking or jerking because of a fit, or unconscious (can’t be woken up)</span>
+        <b class="app-two-tone-list__highlight">seizure (fit)&nbsp;</b>
+        <br aria-hidden="true">
+        shaking or jerking because of a fit, or unconscious (can’t be woken up)
       </li>
       <li>
-        <b>sudden, rapid swelling</b>
-        <span>of the lips, mouth, throat or tongue</span>
+        <b class="app-two-tone-list__highlight">sudden, rapid swelling&nbsp;</b>
+        <br aria-hidden="true">
+        of the lips, mouth, throat or tongue
       </li>
       <li>
-        <b>labour or childbirth</b>
-        <span>waters breaking, more frequent intense cramps (contractions), baby coming, or just born</span>
+        <b class="app-two-tone-list__highlight">labour or childbirth&nbsp;</b>
+        <br aria-hidden="true">
+        waters breaking, more frequent intense cramps (contractions), baby coming, or just born
+      </li>
     </ul>
-
     <p>
       British Sign Language (BSL) speakers can
       <a href="/edge">make a video call to 999</a>.
@@ -65,7 +77,7 @@
 
     <p>Deaf people can use 18000 to contact 999 using text relay.</p>
 
-    <a href="who-needs-help" class="nhsuk-button nhsuk-u-margin-bottom-4">I have none of these</a>
+    <a href="where-are-you-now" class="nhsuk-button nhsuk-u-margin-bottom-4">I have none of these</a>
   </div>
 
 {% endblock content_primary %}

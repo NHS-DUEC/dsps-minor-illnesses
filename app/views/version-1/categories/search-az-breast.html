@@ -1,0 +1,180 @@
+{% extends 'layouts/default.html' %}
+{% block pageTitle %}
+    Find the right topic
+{% endblock %}
+
+{% block page_title %}Find the right topic - NHS 111{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+{% block content %}
+
+    <div class="nhsuk-width-container">
+
+        <div class="nhsuk-u-reading-width">
+            <div class="nhsuk-back-link">
+                <a class="nhsuk-back-link__link" href="/categories/index">
+                    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true">
+                        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                    </svg>
+                    Back to categories</a>
+            </div>
+
+            <h1 data-test-id="heading-text" class="nhsuk-heading-xl">Search topics</h1>
+            <h2 data-test-id="all-topics">All topics (116)</h2>
+
+            <div class="nhsuk-form-group ">
+                <form method="post" novalidate="novalidate" role="search" action="az-search">
+
+                    <div class="app-search-field">
+                        <label for="SanitisedSearchTerm" class="nhsuk-hint" data-test-id="search-box-hint">Choose the one symptom that's bothering you most today.</label>
+
+                        <span class="nhsuk-error-message field-validation-valid" id="search-field-error"></span>
+
+                        <div class="app-search-field__inner">
+                            <input type="search" name="query" value="{{ session.query }}" class="app-search-field__input" data-test-id="search-box" autocomplete="off">
+
+                            <button data-test-id="search-button" type="submit" class="app-search-field__button app-search-field__button--with-divider" data-module="nhsuk-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="app-search-field__icon" viewbox="0 0 18 18" aria-hidden="true" focusable="false" width="22" height="22">
+                                    <g stroke="#005eb8">
+                                        <path d="M12,12l5,5Z" stroke-linejoin="round" stroke-width="1.75"></path>
+                                        <circle cx="7" cy="7" r="6" fill="none" stroke-width="1.75"></circle>
+                                    </g>
+                                </svg>
+                                <span class="nhsuk-u-visually-hidden">Search</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <p data-test-id="topics-found-information">2 topics found.</p>
+
+            <div id="searchResults">
+
+                <ul data-test-id="search-results-list" class="nhsuk-list">
+                    <li>
+                        <a class="nhsuk-u-font-weight-bold" href="/triage/pathways-weirdq">
+                            Breast and nipple problems
+                        </a>
+                        <p>Any problems with the breast or nipple. Lumps, pain or any worries about skin changes.</p>
+                    </li>
+                    <li>
+                        <a class="nhsuk-u-font-weight-bold" href="_edge">
+                            Breastfeeding problems
+                        </a>
+                        <p>Problems getting the baby to attach to the breast. Cracked or sore nipples, or a painful breast that is making breastfeeding difficult.</p>
+                    </li>
+                </ul>
+
+            </div>
+            <hr class="app-section-break">
+
+            <div class="app-callout app-callout--info">
+                <h2 data-test-id="help-finding-a-topic-subheading" class="nhsuk-heading-m">If you cannot find the right topic</h2>
+                <p data-test-id="help-finding-a-topic-information-1">111 online can only help with the topics on this page.</p>
+
+                <p data-test-id="categories-link">You can
+                    <a href="/Categories/Female/23?args=C3DC0DBD4A9E9F054EE356CC345B54927E43B0321BA22E62DA6818EB307BF9B9A7C997F0FEE41B74DDA761F2FBE9059F4AFFA7988C9A50C4F6501A0B8A872ADC23B6F227792DACCA0C274766F36885B1659433C7DDF3DA810D167214BB20A0C7FF42EAF302E747E8FD13B59378C123255A9EBEFFE013BB53CC84F65B3C27C17E195F3A4195E0334DB449AA4BE48A62AACBBAEAEF3ED7CEC26D3037DB1050E2F8A268594B2A4457773A9D2A2EE945C49C7EDE420275D8A32C3E8920CD62E016F83FEEF03DE71F6891429D76094E7BF4D7BF04DBC1B866427BDF99F77A0E5F8BE22E0E4BD1A073C7178BE3BAF475D189B0BABE2075078B6B6A7DE3364BB14425CCBBDBA40F7EFCE29CA3AA7C1DCDAC350DB246395A6AB685CB8D8A5ED61976DB7F7CBAC387A1B94A96C32863A287B513A5EE13F9185023539DC80B7D9DFDA99EF366ACEE712133969437B615211DA4A3E30674818FAED3BBE7081606674EC8CF589DD4108556868E7D" data-event-trigger="click" data-event-value="Cannot find the right topic - browse by category">browse the topics by category</a>
+                </p>
+
+                <p data-test-id="help-finding-a-topic-information-2">If you cannot find what you are looking for, you can:</p>
+                <ul data-test-id="help-finding-a-topic-list" class="nhsuk-list nhsuk-list--bullet">
+                    <li>
+                        <a data-pathway-number="PW1345" href="/PW1345/Female/23/start?args=C3DC0DBD4A9E9F054EE356CC345B54927E43B0321BA22E62DA6818EB307BF9B9A7C997F0FEE41B74DDA761F2FBE9059F4AFFA7988C9A50C4F6501A0B8A872ADC23B6F227792DACCA0C274766F36885B1659433C7DDF3DA810D167214BB20A0C7FF42EAF302E747E8FD13B59378C123255A9EBEFFE013BB53CC84F65B3C27C17E195F3A4195E0334DB449AA4BE48A62AACBBAEAEF3ED7CEC26D3037DB1050E2F8A268594B2A4457773A9D2A2EE945C49C7EDE420275D8A32C3E8920CD62E016F83FEEF03DE71F6891429D76094E7BF4D7BF04DBC1B866427BDF99F77A0E5F8BE22E0E4BD1A073C7178BE3BAF475D189B0BABE2075078B6B6A7DE3364BB14425CCBBDBA40F7EFCE29CA3AA7C1DCDAC350DB246395A6AB685CB8D8A5ED61976DB7F7CBAC387A1B94A96C32863A287B513A5EE13F9185023539DC80B7D9DFDA99EF366ACEE712133969437B615211DA4A3E30674818FAED3BBE7081606674EC8CF589DD4108556868E7D" data-event-trigger="click" data-event-value="Rule out serious conditions" data-test-id="rule-out-serious-conditions">rule out the most serious conditions</a>
+                    </li>
+                    <li>
+                        <a href="https://www.nhs.uk/conditions/" data-event-trigger="click" data-event-value="NHS.UK Conditions">get information on a health problem or condition on the NHS website</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block body_after %}
+    <!--- <script> // get the page text in memory var searchData = []; var displaySet = []; var counter = document.getElementById('counter'); var container = document.getElementById("pathways"); var pathwaysCollection = container.getElementsByClassName('topic'); // make an array out of patways htmlCollection var pathways = Array.from(pathwaysCollection); function _make_sounds_like(pathways){ var input = document.getElementById('input'); var inputStr = input.value; } </script> --->
+
+    <!-- <script type="text/javascript" src="/scripts/stopword.js"></script> <script type="text/javascript"> // get the page text in memory var searchData = []; var displaySet = []; var counter = document.getElementById('counter'); var container = document.getElementById("pathways"); var pathwaysCollection = container.getElementsByClassName('topic'); // make an array out of patways htmlCollection var pathways = Array.from(pathwaysCollection); for (i = 0; i < pathways.length; i++) { span1 = pathways[i].getElementsByClassName("topic-title")[0].innerText; span2 = pathways[i].getElementsByClassName("topic-description")[0].innerText; if (typeof pathways[i].getElementsByClassName("form-hint")[0] !== 'undefined') { span3 = pathways[i].getElementsByClassName("form-hint")[0].innerText; } else { span3 = ""; } txtValue = span1 + " " + span2 + " " + span3; searchData.push(txtValue); } function checkSearchData(str) { for (var i = 0; i < searchData.length; i++) { if (searchData[i].toUpperCase().indexOf(str.toUpperCase()) > -1) { displaySet.push(pathways[i]); } } } // simple-ass filter function simpleAssFilter() { // Declare variables var input = document.getElementById('input'); var inputStr = input.value; if (inputStr == '') { // user backspaced to an empty string // loop through the ORIGINAL array and spit out what to show for (var i = 0; i < pathways.length; i++) { container.appendChild(pathways[i]); counter.innerText = pathways.length; } } else { // break the input into an array and clean it var rawArray = inputStr.split(' ').filter(item => item.length > 2) var filterArray = sw.removeStopwords(rawArray); // empty the display arrays displaySet = []; console.log(filterArray) for (var i = 0; i < filterArray.length; i++) { checkSearchData(filterArray[i]); } // empty the display container container.innerHTML = ""; // now loop through the display array and spit out what to show for (var i = 0; i < displaySet.length; i++) { container.appendChild(displaySet[i]); counter.innerText = displaySet.length; } } } </script> -->
+
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="/scripts/lunr-all-a-z.js"></script>
+    <script>
+
+        // generate a JSON index
+        var container = document.getElementById("pathways");
+        var pathways = container.getElementsByClassName('topic');
+
+        var jsonStr = '';
+        var count = 0;
+
+        for (i = 0; i < pathways.length; i++) {
+            title = pathways[i]
+                .getElementsByClassName("topic-title")[0]
+                .innerText;
+            hint = "";
+            if (pathways[i].getElementsByClassName("form-hint").length) {
+                hint = pathways[i]
+                    .getElementsByClassName("form-hint")[0]
+                    .innerText
+            }
+            description = pathways[i]
+                .getElementsByClassName("topic-description")[0]
+                .innerText;
+            count++;
+
+            jsonStr += '\n{\n  "title" : "' + title + '",\n';
+            jsonStr += '  "hint" : "' + hint + '",\n';
+            jsonStr += '  "description" : "' + description + '",\n';
+            jsonStr += '  "id" : "' + count + '"\n},';
+        }
+        console.log(jsonStr);
+
+        $(document).ready(function () {
+            'use strict';
+            // Set up search
+            var index,
+                store;
+            $.getJSON('/scripts/lunr-index.json', function (response) {
+                // Create index
+                index = lunr
+                    .Index
+                    .load(response);
+                // Create store
+                store = lunrDocuments;
+
+                // Handle search
+                $('#input').on('keyup', function () {
+                    // Get query
+                    var query = $(this).val();
+                    // Search for it
+                    var result = index.search(query);
+                    // Output it
+                    var resultdiv = $('#pathways')
+                    var counter = 0;
+                    if (result.length === 0) {
+                        // Hide results
+                        resultdiv.hide();
+                    } else {
+                        // Show results
+                        resultdiv.empty();
+                        for (var item in result) {
+                            var ref = result[item].ref;
+                            var resultItemStr = '<a href="javascript: return false" class="topic">';
+                            resultItemStr += '<span class="topic-title">' + store[ref].title + '</span>';
+                            resultItemStr += '<span class="topic-description">' + store[ref].description + '</span>';
+                            resultItemStr += '</a>';
+                            resultdiv.append(resultItemStr);
+                        }
+                        counter++;
+                        $('#counter').innerText = counter;
+                        resultdiv.show();
+                    }
+                });
+            });
+        });
+    </script>
+
+{% endblock %}

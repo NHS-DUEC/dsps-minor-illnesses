@@ -2,6 +2,6 @@
   {% if caller %}
     {{ caller() }}
   {% else %}
-    {{ params.html | safe }}
+    {{ params.html | d(params.HTML) | safe }}
   {% endif %}
 </div>

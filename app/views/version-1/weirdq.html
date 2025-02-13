@@ -1,0 +1,24 @@
+{% set page = {
+  title: 'Check your symptoms - NHS 111 online'
+} %}
+
+{% extends 'layouts/111-online/default.html' %}
+
+{% block content_primary %}
+
+  {% call callout({
+    classes: "app-callout--attention"
+  }) %}
+  <p>We’ll now ask you questions about your symptoms.</p>
+  <p>Some might not seem relevant, but they help us rule things out. We rule out serious conditions first. The more questions there are the less serious it’s likely to be.</p>
+  <p>You won't get a diagnosis, but you will find out what to do next.</p>
+  {% endcall %}
+
+  {{
+    button({
+      text: 'I understand',
+      href: 'blah'
+    })
+  }}
+
+{% endblock content_primary %}
