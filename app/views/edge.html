@@ -1,0 +1,20 @@
+{% set page = {
+  title: 'DSPs Prototype - Edge page',
+  content_secondary: {
+    visible: false
+  }
+} %}
+
+{% extends page.layout | d('layouts/111-online/default.html') %}
+
+{% block content_primary %}
+
+  <h2 class="nhsuk-heading-m">Edge reached</h2>
+
+  <p>You have a reached the edge of this prototype.</p>
+
+  <p>
+    <a href="javascript:history.back();">Return to the previous page</a>
+  </p>
+
+{% endblock content_primary %}
