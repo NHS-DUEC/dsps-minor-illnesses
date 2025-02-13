@@ -1,0 +1,71 @@
+{% set page = {
+  title: 'Check it’s not an emergency'
+} %}
+
+{% set bodyClasses = "module-zero" %}
+
+{% extends 'layouts/111-online/default.html' %}
+
+{% block content_primary %}
+
+  <div class="module-zero-container nhsuk-u-margin-bottom-4">
+
+    <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">
+      Check it’s not an emergency
+    </h1>
+
+    <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Call 999 now for any of these:</h2>
+
+    <ul>
+      <li>
+        <b>signs of a heart attack</b>
+        <span>chest pain, pressure, heaviness, tightness or squeezing across your chest</span>
+      </li>
+      <li>
+        <b>signs of a stroke</b>
+        <span>face dropping on one side, can’t hold both arms up, difficulty speaking</span>
+      </li>
+      <li>
+        <b>sudden confusion (delirium)</b>
+        <span>cannot be sure of own name or age</span>
+      </li>
+      <li>
+        <b>suicide attempt</b>
+        <span>by taking something or self-harming</span>
+      </li>
+      <li>
+        <b>severe difficulty breathing</b>
+        <span>not being able to get words out, choking or gasping</span>
+      </li>
+      <li>
+        <b>heavy bleeding</b>
+        <span>spraying, pouring or enough to make a puddle</span>
+      </li>
+      <li>
+        <b>severe injuries</b>
+        <span>after a serious accident</span>
+      </li>
+      <li>
+        <b>seizure (fit)</b>
+        <span>shaking or jerking because of a fit, or unconscious (can’t be woken up)</span>
+      </li>
+      <li>
+        <b>sudden, rapid swelling</b>
+        <span>of the lips, mouth, throat or tongue</span>
+      </li>
+      <li>
+        <b>labour or childbirth</b>
+        <span>waters breaking, more frequent intense cramps (contractions), baby coming, or just born</span>
+    </ul>
+
+    <p>
+      British Sign Language (BSL) speakers can
+      <a href="/edge">make a video call to 999</a>.
+    </p>
+
+    <p>Deaf people can use 18000 to contact 999 using text relay.</p>
+
+    <a href="who-needs-help" class="nhsuk-button nhsuk-u-margin-bottom-4">I have none of these</a>
+  </div>
+
+{% endblock content_primary %}
