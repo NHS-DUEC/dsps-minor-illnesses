@@ -9,9 +9,13 @@
 
 {% block content_primary %}
 
-  <h1 class="nhsuk-heading-xl">{{ page.title }}</h1>
-
-  <p>We have sent information about your problem to the pharmacy.</p>
+  {{
+    panel({
+      titleText: page.title,
+      text: "We have sent information about your problem to the pharmacy",
+      classes: "nhsuk-u-margin-bottom-6"
+    })
+  }}
 
   <h2>What to do next</h2>
 
@@ -28,5 +32,19 @@
     <li>visiting their local site to have a consultation in a private room</li>
     <li>being referred on to another local pharmacy in your area</li>
   </ul>
+
+  {% set cardHTML %}
+  <p>You can call today between 8:30am to 6:00pm</p>
+  <div class="nhsuk-heading-xl">
+    <a href="tel:+441611234567">0161 123 4567</a>
+  </div>
+  {% endset %}
+
+  {{
+    card({
+      heading: 'Drugs4Delivery',
+      HTML: cardHTML
+    })
+  }}
 
 {% endblock %}
