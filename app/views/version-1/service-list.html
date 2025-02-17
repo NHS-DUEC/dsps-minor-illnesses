@@ -1,0 +1,35 @@
+{% set page = {
+  title: 'Select a pharmacy'
+} %}
+
+{% extends 'layouts/111-online/service-list.html' %}
+
+{% block content_body %}
+
+  <ul class="nhsuk-grid-row nhsuk-card-group">
+
+    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+      {{
+        appService({
+          name: 'Boots Pharmacy',
+          address: {
+            line1: 'Churchview Health Centre',
+            line2: 'Cartergate',
+            line3: 'Grimsby',
+            postcode: 'DN31 1QZ'
+          }
+        })
+      }}
+    </li>
+
+    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+      {{
+        appService({
+          name: 'Drugs4Delivery'
+        })
+      }}
+    </li>
+
+  </ul>
+
+{% endblock content_body %}

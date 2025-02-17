@@ -4,9 +4,12 @@
 {% from 'components/details/macro.njk' import details %}
 {% from 'components/inset-text/macro.njk' import insetText %}
 {% from 'components/action-link/macro.njk' import actionLink %}
+{% from 'components/card/macro.njk' import card with context %}
+{% from 'components/tag/macro.njk' import tag %}
 {% from "components/111-online/callout/macro.njk" import callout with context %}
 {% from "components/111-online/footer/macro.njk" import footer as appFooter with context %}
 {% from "components/111-online/call-to-action/macro.njk" import callToAction %}
+{% from "components/111-online/card/macro.njk" import service as appService with context %}
 
 {% set title = page.title | d('title not set') %}
 
@@ -28,22 +31,26 @@
 
   {% block content_header %}{% endblock content_header %}
 
-  <div class="nhsuk-grid-row">
+  {% block content_body %}
 
-    <div class="nhsuk-grid-column-{{ _layout.content_primary.width }}" id="{{ _layout.content_primary.id }}">
-      {% block content_primary %}{% endblock %}
-    </div>
-    <!-- /.nhsuk-grid-column-{{ _layout.content_primary.width }} -->
+    <div class="nhsuk-grid-row">
 
-    {% if _layout.content_secondary.visible %}
-      <div class="nhsuk-grid-column-{{ _layout.content_secondary.width }}" id="{{ _layout.content_secondary.id }}">
-        {% block content_secondary %}{% endblock %}
+      <div class="nhsuk-grid-column-{{ _layout.content_primary.width }}" id="{{ _layout.content_primary.id }}">
+        {% block content_primary %}{% endblock %}
       </div>
-      <!-- /.nhsuk-grid-column-{{ _layout.content_secondary.width }} -->
-    {% endif %}
+      <!-- /.nhsuk-grid-column-{{ _layout.content_primary.width }} -->
 
-  </div>
-  <!-- /.nhsuk-grid-column-grid-row -->
+      {% if _layout.content_secondary.visible %}
+        <div class="nhsuk-grid-column-{{ _layout.content_secondary.width }}" id="{{ _layout.content_secondary.id }}">
+          {% block content_secondary %}{% endblock %}
+        </div>
+        <!-- /.nhsuk-grid-column-{{ _layout.content_secondary.width }} -->
+      {% endif %}
+
+    </div>
+    <!-- /.nhsuk-grid-column-grid-row -->
+
+  {% endblock %}
 
   {% block content_footer %}{% endblock content_footer %}
 
