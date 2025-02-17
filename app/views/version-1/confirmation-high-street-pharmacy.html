@@ -5,7 +5,7 @@
   }
 } %}
 
-{% extends page.layout.file %}
+{% extends page.layout.file | d(layoutFile()) %}
 
 {% block content_primary %}
 

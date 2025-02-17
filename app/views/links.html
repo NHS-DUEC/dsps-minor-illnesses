@@ -1,0 +1,113 @@
+{% set page = {
+  title: 'DSPs Prototype',
+  layout: {
+    content_secondary: {
+      visible: true
+    }
+  }
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_header %}
+  <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-6">Distance Selling Pharmacies (DSPs)</h1>
+
+  <p>This is a prototype for 111 Online</p>
+
+{% endblock content_header %}
+
+{% block content_primary %}
+
+  <h2 class="nhsuk-heading-m">Page designs</h2>
+
+  {% set links = [
+    {
+      text: 'Start',
+      href: './version-1/start'
+    }, {
+      text: '111 online - Check your symptoms',
+      href: './version-1/111-start'
+    }, {
+      text: 'Check it’s not an emergency (Module Zero)',
+      href: './version-1/module-zero'
+    }, {
+      text: 'Where are you now?',
+      href: './version-1/where-are-you-now'
+    }, {
+      text: 'What is your age?',
+      href: './version-1/age'
+    }, {
+      text: 'What was your sex at birth?',
+      href: './version-1/sex'
+    }, {
+      text: 'Find the right topic',
+      href: './version-1/categories/'
+    }, {
+      text: 'Search A-Z',
+      href: './version-1/categories/search-az'
+    }, {
+      text: 'We’ll now ask you questions (Weird Questions interupt)',
+      href: './version-1/weirdq'
+    }, {
+      text: 'What were you stung or bitten by?',
+      href: './version-1/cause'
+    }, {
+      text: 'Were you bitten or stung in the last 6 hours?',
+      href: './version-1/timeframe'
+    }, {
+      text: 'Have you been stung 10 or more times?',
+      href: './version-1/how-many-times'
+    }, {
+      text: 'Are you feeling sick or being sick (vomiting) now?',
+      href: './version-1/sickness'
+    }, {
+      text: 'Is the bite or sting in any of these areas?',
+      href: './version-1/where-bitten'
+    }, {
+      text: 'Have you had a high temperature in the last 12 hours?',
+      href: './version-1/temperature'
+    }, {
+      text: 'Is there a rapidly spreading redness or change in skin colour around the wound?',
+      href: './version-1/change-in-wound'
+    }, {
+      text: 'Do either of these apply to you?',
+      href: './version-1/do-these-apply'
+    }, {
+      text: 'Get help today (disposition)',
+      href: './version-1/disposition'
+    }, {
+      text: 'Select a pharmacy (service list)',
+      href: './version-1/service-list'
+    }, {
+      text: 'Confirmation - High street pharmacy',
+      href: './version-1/confirmation-high-street-pharmacy.html'
+    }, {
+      text: 'Confirmation - Online pharmacy',
+      href: './version-1/confirmation-online-pharmacy.html'
+    }
+  ] %}
+
+  {{
+    contentsList({
+      items: links
+    })
+  }}
+
+{% endblock content_primary %}
+
+{% block content_secondary %}
+
+  <h3>Useful links</h3>
+
+  <ul class="nhsuk-list">
+    <li>
+      <a href="https://github.com/NHS-DUEC/dsps-minor-illnesses">Github repository</a>
+    </li>
+    <li>
+      <a href="https://app.mural.co/t/nhsdigital8118/m/nhsdigital8118/1737109994191/f552af70d4677cdc61a63470c85d6873189dee7c?sender=u922b2a2b480e7da228657613">Mural board</a>
+    </li>
+    <li>
+      <a href="">Confluence page</a>
+    </li>
+  </ul>
+{% endblock content_secondary %}

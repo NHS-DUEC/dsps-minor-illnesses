@@ -22,8 +22,6 @@
 
 {% block content_disposition %}
 
-  {# <hr class="app-section-break nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-4"> #}
-
   <h2 class="nhsuk-heading-l">Recommended service</h2>
 
   <h3 class="nhsuk-heading-m">Pharmacist consultation service</h3>
@@ -35,16 +33,27 @@
   {{
     actionLink({
       text: "Refer me to a pharmacist",
-      href: "#"
+      href: "service-list"
     })
   }}
 
   <hr class="app-section-break nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-4">
 
+  {% set detailsHTML %}
+  <p>Pharmacists are trained to deal with minor illnesses and common conditions.
+  </p>
+  <p>You can get advice, treatment or referral to another NHS service if needed.
+  </p>
+  <p>If appropriate, pharmacists can prescribe antibiotics or antivirals for a small number of common conditions.</p>
+  <p>We will send your completed referral to the pharmacist so they are prepared.
+  </p>
+  <p>When you contact them the pharmacist will explain what will happen next.</p>
+  {% endset %}
+
   {{
     details({
       text: "Why should I use the pharmacist consultation service?",
-      HTML: "<p>Content here</p>"
+      HTML: detailsHTML
     })
   }}
 
