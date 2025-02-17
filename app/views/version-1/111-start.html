@@ -1,11 +1,8 @@
 {% set page = {
-  title: 'Check your symptoms - NHS 111 online',
-  layout: {
-    file: 'layouts/111-online/default.html'
-  }
+  title: 'Check your symptoms - NHS 111 online'
 } %}
 
-{% extends page.layout.file %}
+{% extends page.layout.file | d(layoutFile()) %}
 
 {% block content_primary %}
 

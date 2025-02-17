@@ -9,8 +9,14 @@
 
 {% extends page.layout.file | d(layoutFile()) %}
 
-{% block content_primary %}
+{% block content_header %}
   <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-6">Distance Selling Pharmacies (DSPs)</h1>
+
+  <p>This is a prototype for 111 Online</p>
+
+{% endblock content_header %}
+
+{% block content_primary %}
 
   <h2 class="nhsuk-heading-m">Page designs</h2>
 
@@ -90,9 +96,18 @@
 {% endblock content_primary %}
 
 {% block content_secondary %}
+
+  <h3>Useful links</h3>
+
   <ul class="nhsuk-list">
     <li>
-      <a href="">Github repository</a>
+      <a href="https://github.com/NHS-DUEC/dsps-minor-illnesses">Github repository</a>
+    </li>
+    <li>
+      <a href="https://app.mural.co/t/nhsdigital8118/m/nhsdigital8118/1737109994191/f552af70d4677cdc61a63470c85d6873189dee7c?sender=u922b2a2b480e7da228657613">Mural board</a>
+    </li>
+    <li>
+      <a href="">Confluence page</a>
     </li>
   </ul>
 {% endblock content_secondary %}
