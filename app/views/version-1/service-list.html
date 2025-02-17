@@ -7,7 +7,7 @@
 
 {% extends page.layout.file | d(layoutFile()) %}
 
-{% block content_header %}
+{% block content_footer %}
 
   {# from layout #}
   {{ super() }}
@@ -18,19 +18,27 @@
   <p>You might not always see both types.</p>
   {% endset %}
 
-  {{
+  <div class="nhsuk-expander-group">
+    {{
     details({
-      text: 'help me choose',
-      HTML: detailsHTML
+      text: 'Help me choose',
+      HTML: detailsHTML,
+      classes: 'nhsuk-expander',
+      open: closed
     })
   }}
+  </div>
+
 {% endblock %}
 
 {% block content_body %}
 
-  <ul class="nhsuk-grid-row nhsuk-card-group">
+  <p>These are 2 of 2 services available in
+    {{ data.postcode | d('A12 3BC') }}</p>
 
-    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+  <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
+
+    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
       {{
         appService({
@@ -46,7 +54,7 @@
       }}
     </li>
 
-    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
       {{
         appService({
           name: 'Drugs4Delivery',
@@ -56,8 +64,5 @@
     </li>
 
   </ul>
-
-  <p>These are 2 of 2 services available in
-    {{ data.postcode | d('A12 3BC') }}</p>
 
 {% endblock content_body %}
