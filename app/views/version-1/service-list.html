@@ -7,7 +7,7 @@
 
 {% extends page.layout.file | d(layoutFile()) %}
 
-{% block content_footer %}
+{% block content_header %}
 
   {# from layout #}
   {{ super() }}
@@ -17,6 +17,9 @@
   <p>High street pharmacies usually see you face-to-face, but you can ask for a video or phone consultation if you want one</p>
   <p>You might not always see both types.</p>
   {% endset %}
+
+  <p>These are 2 of 2 services available in
+    {{ data.postcode | d('A12 3BC') | upper }}</p>
 
   <div class="nhsuk-expander-group">
     {{
@@ -33,12 +36,9 @@
 
 {% block content_body %}
 
-  <p>These are 2 of 2 services available in
-    {{ data.postcode | d('A12 3BC') | upper }}</p>
+  <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-3">
 
-  <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
-
-    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
 
       {{
         appService({
@@ -54,7 +54,7 @@
       }}
     </li>
 
-    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
       {{
         appService({
           name: 'Drugs4Delivery',
