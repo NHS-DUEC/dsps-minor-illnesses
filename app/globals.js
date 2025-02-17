@@ -23,6 +23,13 @@ export default () => {
    * {{ sayHello("World") }} => Hello, World!
    */
 
+  globals.layoutFile = function (layout) {
+    switch (layout) {
+      default:
+        return 'layouts/111-online/default.html'
+    }
+  }
+
   // Keep the following line to return your globals to the app
   return globals
 }

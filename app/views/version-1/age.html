@@ -2,7 +2,7 @@
   title: 'What is your age?'
 } %}
 
-{% extends 'layouts/111-online/default.html' %}
+{% extends page.layout.file | d(layoutFile()) %}
 
 {% block content_primary %}
 

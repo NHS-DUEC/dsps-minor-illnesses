@@ -6,15 +6,20 @@
 {% from 'components/action-link/macro.njk' import actionLink %}
 {% from 'components/card/macro.njk' import card with context %}
 {% from 'components/tag/macro.njk' import tag %}
+{% from 'components/details/macro.njk' import details %}
 {% from "components/111-online/callout/macro.njk" import callout with context %}
 {% from "components/111-online/footer/macro.njk" import footer as appFooter with context %}
 {% from "components/111-online/call-to-action/macro.njk" import callToAction %}
+{% from "components/111-online/card/macro.njk" import card as appCard with context %}
 {% from "components/111-online/card/macro.njk" import service as appService with context %}
 
 {% set title = page.title | d('title not set') %}
+{% set bodyClasses = page.bodyClasses | d('') %}
 
 {% set _layout = {
-  layout: 'layouts/default.html',
+  layout: {
+    file: 'layouts/default.html'
+  },
   content_primary: {
     id: 'content-primary',
     width: 'two-thirds'
@@ -25,7 +30,7 @@
   }
 } | objectMerge(page.layout | d({})) %}
 
-{% extends _layout.layout %}
+{% extends _layout.layout.file %}
 
 {% block content %}
 

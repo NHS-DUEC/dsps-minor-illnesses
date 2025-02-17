@@ -1,7 +1,7 @@
 <div class="nhsuk-card nhsuk-card--clickable app-card app-card--primary{% if params.classes %} {{ params.classes }}{% endif %}">
   <div class="nhsuk-card__content nhsuk-card__content--primary">
     <h2 class="nhsuk-card__heading nhsuk-heading-m app-card__heading">
-      <a class="nhsuk-card__link app-card__link" href="#">{{ params.heading }}</a>
+      <a class="nhsuk-card__link app-card__link" href="{{ params.href | d('#') }}">{{ params.heading }}</a>
     </h2>
 
     {% if caller %}

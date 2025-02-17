@@ -1,0 +1,39 @@
+{% set page = {
+  title: 'We have sent your details',
+  layout: {
+    file: "layouts/111-online/content-page.html"
+  }
+} %}
+
+{% extends page.layout.file %}
+
+{% block content_primary %}
+
+  <h1 class="nhsuk-heading-xl">{{ page.title }}</h1>
+
+  <p>We have sent information about your problem to the pharmacy.</p>
+
+  <h2>What to do next</h2>
+
+  <p>Contact your selected pharmacy today or tomorrow for your consultation.
+  </p>
+
+  <p>You can either:</p>
+
+  <ul>
+    <li>go to the pharmacy in person</li>
+    <li>call the pharmacy</li>
+  </ul>
+
+  <p>You need to tell them you were referred by 111 online.</p>
+
+  <h3>If you call the pharmacy</h3>
+
+  <p>You can ask for a video or phone consultation if you would prefer one.</p>
+  <p>You may still need to go to the pharmacy in person if:</p>
+  <ul>
+    <li>the pharmacy is too busy to answer the phone</li>
+    <li>you have a problem the pharmacist would like to see in person, like a rash</li>
+  </ul>
+
+{% endblock %}

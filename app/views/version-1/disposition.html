@@ -18,7 +18,7 @@
 
 {# This sets which layout file to use
 ---------------------------------------------------- #}
-{% extends page.layout.file %}
+{% extends page.layout.file | d(layoutFile()) %}
 
 {% block content_disposition %}
 

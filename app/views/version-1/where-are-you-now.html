@@ -2,7 +2,7 @@
   title: 'Where are you now?'
 } %}
 
-{% extends 'layouts/111-online/default.html' %}
+{% extends page.layout.file | d(layoutFile()) %}
 
 {% block content_primary %}
 

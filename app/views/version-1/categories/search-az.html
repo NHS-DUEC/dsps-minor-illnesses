@@ -1,11 +1,12 @@
-{% extends 'layouts/default.html' %}
-{% block pageTitle %}
-  Find the right topic
-{% endblock %}
+{% set page = {
+  title: 'Find the right topic',
+  layout: {
+    file: 'layouts/111-online/content-page.html'
+  }
+} %}
 
-{% block page_title %}Find the right topic - NHS 111{% endblock %}
+{% extends page.layout.file | d(layoutFile()) %}
 
-{% block body_css_classes %}nhsuk-frontend{% endblock %}
 {% block content %}
 
   <div class="nhsuk-width-container">

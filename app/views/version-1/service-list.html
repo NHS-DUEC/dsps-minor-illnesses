@@ -1,17 +1,39 @@
 {% set page = {
-  title: 'Select a pharmacy'
+  title: 'Select a pharmacy',
+  layout: {
+    file: 'layouts/111-online/service-list.html'
+  }
 } %}
 
-{% extends 'layouts/111-online/service-list.html' %}
+{% extends page.layout.file %}
+
+{% block content_header %}
+
+  {# from layout #}
+  {{ super() }}
+
+  {% set detailsHTML %}
+  <p>Online pharmacies mostly offer consultations over video or the phone. Rarely, you might be asked to visit their local premises.</p>
+  <p>High street pharmacies usually see you face-to-face, but you can ask for a video consultation if you want one.</p>
+  {% endset %}
+  {{
+    details({
+      text: 'help me choose',
+      HTML: detailsHTML
+    })
+  }}
+{% endblock %}
 
 {% block content_body %}
 
   <ul class="nhsuk-grid-row nhsuk-card-group">
 
     <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+
       {{
         appService({
           name: 'Boots Pharmacy',
+          href: 'confirmation-high-street-pharmacy',
           address: {
             line1: 'Churchview Health Centre',
             line2: 'Cartergate',
@@ -25,11 +47,15 @@
     <li class="nhsuk-grid-column-full nhsuk-card-group__item">
       {{
         appService({
-          name: 'Drugs4Delivery'
+          name: 'Drugs4Delivery',
+          href: 'confirmation-online-pharmacy'
         })
       }}
     </li>
 
   </ul>
+
+  <p>These are 2 of 2 services available in
+    {{ data.postcode | d('A12 3BC') }}</p>
 
 {% endblock content_body %}

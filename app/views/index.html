@@ -1,14 +1,16 @@
 {% set page = {
   title: 'DSPs Prototype',
-  content_secondary: {
-    visible: false
+  layout: {
+    content_secondary: {
+      visible: true
+    }
   }
 } %}
 
-{% extends page.layout | d('layouts/111-online/default.html') %}
+{% extends page.layout.file | d(layoutFile()) %}
 
 {% block content_primary %}
-  <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-6">111 Online &ndash; Prototype Kit</h1>
+  <h1 class="nhsuk-heading-l nhsuk-u-margin-bottom-6">Distance Selling Pharmacies (DSPs)</h1>
 
   <h2 class="nhsuk-heading-m">Page designs</h2>
 
@@ -70,6 +72,12 @@
     }, {
       text: 'Select a pharmacy (service list)',
       href: './version-1/service-list'
+    }, {
+      text: 'Confirmation - High street pharmacy',
+      href: './version-1/confirmation-high-street-pharmacy.html'
+    }, {
+      text: 'Confirmation - Online pharmacy',
+      href: './version-1/confirmation-online-pharmacy.html'
     }
   ] %}
 
@@ -80,3 +88,11 @@
   }}
 
 {% endblock content_primary %}
+
+{% block content_secondary %}
+  <ul class="nhsuk-list">
+    <li>
+      <a href="">Github repository</a>
+    </li>
+  </ul>
+{% endblock content_secondary %}

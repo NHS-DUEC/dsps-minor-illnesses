@@ -1,0 +1,32 @@
+{% set page = {
+  title: 'We have sent your details',
+  layout: {
+    file: "layouts/111-online/content-page.html"
+  }
+} %}
+
+{% extends page.layout.file %}
+
+{% block content_primary %}
+
+  <h1 class="nhsuk-heading-xl">{{ page.title }}</h1>
+
+  <p>We have sent information about your problem to the pharmacy.</p>
+
+  <h2>What to do next</h2>
+
+  <p>Contact your selected pharmacy today or tomorrow for your consultation.
+  </p>
+
+  <p>When you call them, they will describe how the consultation will take place, which will usually be over video. You can ask for a phone consultation if you prefer.</p>
+
+  <p>If they need to see you in person to assess the problem they will explain how that will happen.</p>
+
+  <p>This might be:</p>
+
+  <ul>
+    <li>visiting their local site to have a consultation in a private room</li>
+    <li>being referred on to another local pharmacy in your area</li>
+  </ul>
+
+{% endblock %}
