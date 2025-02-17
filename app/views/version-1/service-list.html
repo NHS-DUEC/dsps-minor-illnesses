@@ -15,10 +15,6 @@
   <p>These are 2 of 2 services available in
     {{ data.postcode | d('A12 3BC') | upper }}</p>
 
-{% endblock content_header %}
-
-{% block content_footer %}
-
   {% set detailsHTML %}
   <p>Online pharmacies mostly offer consultations over video or the phone. Rarely, you might be asked to visit their local premises.</p>
   <p>High street pharmacies usually see you face-to-face, but you can ask for a video or phone consultation if you want one</p>
@@ -36,7 +32,7 @@
   }}
   </div>
 
-{% endblock content_footer %}
+{% endblock content_header %}
 
 {% block content_body %}
 
