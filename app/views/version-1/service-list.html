@@ -34,7 +34,7 @@
 {% block content_body %}
 
   <p>These are 2 of 2 services available in
-    {{ data.postcode | d('A12 3BC') }}</p>
+    {{ data.postcode | d('A12 3BC') | upper }}</p>
 
   <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-0">
 
