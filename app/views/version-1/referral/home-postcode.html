@@ -1,7 +1,7 @@
 {# Page configuration
 ---------------------------------------------------- #}
 {% set page = {
-  title: 'Is ' + data.postcode | d(data.defaults.postcode) + ' your home postcode?',
+  title: 'Is ' + data.postcode | isEmpty | d(data.defaults.postcode) + ' your home postcode?',
   layout: {
     file: 'layouts/111-online/question/radio.html'
   }

@@ -88,7 +88,7 @@
       text: 'Phone number - (Referral)',
       href: './version-1/referral/phone-number.html'
     }, {
-      text: 'Is ' + data.postcode | d(data.defaults.postcode) + ' your home postcode? - (Referral)',
+      text: 'Is ' + data.postcode | isEmpty | d(data.defaults.postcode) + ' your home postcode? - (Referral)',
       href: './version-1/referral/home-postcode.html'
     }, {
       text: 'Check details (Referral)',
