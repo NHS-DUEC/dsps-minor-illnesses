@@ -6,20 +6,26 @@
 
 {% block content_primary %}
 
-  {% block check_answers_header %}{% endblock check_answers_header %}
+  <form method="post">
 
-  {{ summaryList(details.answers) }}
+    {% block check_answers_header %}{% endblock check_answers_header %}
 
-  {% block check_answers_footer %}{% endblock check_answers_footer %}
+    {% block check_answers %}
+      {{ summaryList(details.answers) }}
+    {% endblock check_answers %}
 
-  {% block check_answers_actions %}
-    {% if details.actions.button %}
-      {{
+    {% block check_answers_footer %}{% endblock check_answers_footer %}
+
+    {% block check_answers_actions %}
+      {% if details.actions.button %}
+        {{
         button({
           text: 'Confirm'
         })
       }}
-    {% endif %}
-  {% endblock check_answers_actions %}
+      {% endif %}
+    {% endblock check_answers_actions %}
+
+  </form>
 
 {% endblock content_primary %}

@@ -26,7 +26,8 @@ export function version1(req) {
     '/version-1/referral/date-of-birth': {},
     '/version-1/referral/phone-number': {},
     '/version-1/referral/home-postcode': {},
-    '/version-1/referral/check-details': {}
+    '/version-1/referral/check-details': {},
+    '/version-1/confirmation-online-pharmacy': {}
   }
   return wizard(journey, req)
 }
