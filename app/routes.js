@@ -4,18 +4,28 @@ import { version1 } from './journeys.js'
 
 const router = express.Router()
 
-/**
- * Add your routes here
- */
+// --------------------------------------------------------
+// version 1
+// --------------------------------------------------------
 
-router.all('/version-1/:view?', (req, res, next) => {
+router.all([
+  '/version-1/:view?',
+  '/version-1/:view/:view?'
+], (req, res, next) => {
   res.locals.paths = version1(req)
   next()
 })
 
-router.post('/version-1/:view?', (req, res) => {
+router.post([
+  '/version-1/:view?',
+  '/version-1/:view/:view?'
+], (req, res) => {
   res.redirect(res.locals.paths.next)
 })
+
+// --------------------------------------------------------
+// generic routes
+// --------------------------------------------------------
 
 // if edge page requested anywhere in this app render the edge.html page
 router.get(/\/edge(\/|$)/, (req, res) => {

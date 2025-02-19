@@ -1,0 +1,30 @@
+{% extends 'layouts/111-online/question/base.html' %}
+
+{% macro renderTextInput(params) %}
+  {# default to decorate based on the pass label for the input #}
+  {{
+    input({
+      decorate: params.label.text | slugify,
+      classes: 'nhsuk-u-width-three-quarters'
+    } | objectMerge(params))
+  }}
+{% endmacro %}
+
+{% block question_body %}
+
+  {# if an array has been passed (multiple inputs) #}
+  {% if question.inputs | isArray %}
+    {# loop over the array and render the inputs #}
+    {% for this_input in question.inputs %}
+      {{
+        renderTextInput(this_input)
+      }}
+    {% endfor %}
+    {# if not an array, just render the passed input #}
+  {% else %}
+    {{
+      renderTextInput(question.inputs)
+    }}
+  {% endif %}
+
+{% endblock question_body %}

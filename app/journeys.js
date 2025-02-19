@@ -21,7 +21,12 @@ export function version1(req) {
     '/version-1/temperature': {},
     '/version-1/change-in-wound': {},
     '/version-1/do-these-apply': {},
-    '/version-1/disposition': {}
+    '/version-1/disposition': {},
+    '/version-1/referral/name': {},
+    '/version-1/referral/date-of-birth': {},
+    '/version-1/referral/phone-number': {},
+    '/version-1/referral/home-postcode': {},
+    '/version-1/referral/check-details': {}
   }
   return wizard(journey, req)
 }

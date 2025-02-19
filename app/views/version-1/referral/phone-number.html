@@ -1,0 +1,22 @@
+{% set page = {
+  title: 'What is your phone number?',
+  layout: {
+    file: 'layouts/111-online/question/text-input.html'
+  }
+} %}
+
+{% set question = {
+  callout: {
+    text: "We need this in case the pharmacist needs to call you."
+  },
+  inputs: [
+    {
+      decorate: 'phone',
+      label: {
+        text: 'Enter a mobile or landline number'
+      }
+    }
+  ]
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}

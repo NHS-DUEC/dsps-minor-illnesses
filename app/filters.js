@@ -42,10 +42,24 @@ export default (env) => {
     })(...objects)
   }
 
+  /**
+   *
+   * @param {*} data - the thing to be logged
+   * @returns a string that will be evaluated by the browser producing a console log
+   */
   filters.log = function (data) {
     return nunjucksSafe(
       `<script>console.log(${JSON.stringify(data, null, '\t')});</script>`
     )
+  }
+
+  /**
+   *
+   * @param {*} value - the thing to checked
+   * @returns true or false
+   */
+  filters.isArray = function isArray(value) {
+    return Array.isArray(value);
   }
 
   // Keep the following line to return your filters to the app

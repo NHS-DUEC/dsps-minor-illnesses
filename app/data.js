@@ -7,12 +7,15 @@
  * existing application.
  */
 export default {
-  // Set feature flags using the `features` key
-  features: {
-    demo: {
-      on: false,
-      name: 'Demonstration',
-      description: 'Show message about feature flags on the home page.'
+  'defaults': {
+    'postcode': 'A12 3BC',
+    'first-name': 'Firstname',
+    'last-name': 'Surname',
+    'phone': '07967 123456',
+    'dob': {
+      'day': '09',
+      'month': '12',
+      'year': '1981',
     }
   }
 }

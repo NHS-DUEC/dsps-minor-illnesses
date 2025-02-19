@@ -1,0 +1,35 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Is ' + data.postcode | d(data.defaults.postcode) + ' your home postcode?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  callout: {
+    text: 'Your home postcode helps us find your NHS number'
+  },
+  radios: {
+    decorate: 'home-postcode',
+    items: [
+      {
+        text: 'Yes'
+      }, {
+        text: "No"
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file | d(layoutFile()) %}

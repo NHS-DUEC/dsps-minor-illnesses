@@ -1,65 +1,21 @@
-{% extends 'layouts/111-online/default.html' %}
+{% extends 'layouts/111-online/question/base.html' %}
 
-{% block content_primary %}
+{% block question_body %}
 
-  <form method="post">
+  {{
+    radios({
+      decorate: page.title | d('radios') | slugify,
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    } | objectMerge(question.radios | d({})))
+  }}
 
-    <h1 class="nhsuk-heading-l">
-      {{ question.text | d(page.title | d('Question text is required for this template')) }}
-    </h1>
-
-    {% set callout_content %}
-    {% if question.callout and not question.callout.hide %}
-      {% call callout({ classes: 'app-callout--info' } | objectMerge(question.callout)) %}
-      {% if question.callout.text %}
-        <p>{{ question.callout.text }}</p>
-      {% elseif question.callout.html %}
-        {{ question.callout.html | d('Nothing passed to callout') | safe }}
-      {% endif %}
-      {% endcall %}
-    {% endif %}
-    {% endset %}
-
-    {% if calloutHTML or question.callout %}
-      {% if not question.callout.position or question.callout.position == 'top' %}
-        {{ calloutHTML | d(callout_content) | safe }}
-      {% endif %}
-    {% endif %}
-
-    {% block question_prepend %}{% endblock %}
-
-    {{
-      radios({
-        decorate: page.title | d('radios') | slugify,
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      } | objectMerge(question.radios | d({})))
-    }}
-
-    {% if calloutHTML or question.callout %}
-      {% if question.callout.position == 'bottom' %}
-        {{ calloutHTML | d(callout_content) | safe }}
-      {% endif %}
-    {% endif %}
-
-    {% block question_append %}{% endblock %}
-
-    {% block question_actions %}
-      {{
-        button({
-          text: 'Save and continue'
-        } | objectMerge(question.actions.button | d({})))
-      }}
-    {% endblock %}
-
-  </form>
-
-{% endblock content_primary %}
+{% endblock question_body %}

@@ -1,0 +1,28 @@
+{% extends 'layouts/111-online/question/base.html' %}
+
+{% block question_body %}
+
+  {{
+    dateInput({
+      decorate: question.date.fieldset.legend.text | d(page.title) | slugify,
+      hint: {
+        text: "For example, 9 12 1981"
+      },
+      items: [
+        {
+          name: "day",
+          classes: "nhsuk-input--width-2"
+        },
+        {
+          name: "month",
+          classes: "nhsuk-input--width-2"
+        },
+        {
+          name: "year",
+          classes: "nhsuk-input--width-4"
+        }
+      ]
+    } | objectMerge(question.date | d({})))
+  }}
+
+{% endblock question_body %}

@@ -8,6 +8,8 @@
 {% from 'components/tag/macro.njk' import tag %}
 {% from 'components/details/macro.njk' import details %}
 {% from 'components/panel/macro.njk' import panel %}
+{% from 'components/date-input/macro.njk' import dateInput %}
+{% from 'components/summary-list/macro.njk' import summaryList %}
 {% from "components/111-online/callout/macro.njk" import callout with context %}
 {% from "components/111-online/footer/macro.njk" import footer as appFooter with context %}
 {% from "components/111-online/call-to-action/macro.njk" import callToAction %}
@@ -42,13 +44,17 @@
     <div class="nhsuk-grid-row">
 
       <div class="nhsuk-grid-column-{{ _layout.content_primary.width }}" id="{{ _layout.content_primary.id }}">
+        {%- block content_primary_header %}{% endblock content_primary_header -%}
         {% block content_primary %}{% endblock %}
+        {%- block content_primary_footer %}{% endblock content_primary_footer -%}
       </div>
       <!-- /.nhsuk-grid-column-{{ _layout.content_primary.width }} -->
 
       {% if _layout.content_secondary.visible %}
         <div class="nhsuk-grid-column-{{ _layout.content_secondary.width }}" id="{{ _layout.content_secondary.id }}">
+          {%- block content_secondary_header %}{% endblock content_secondary_header -%}
           {% block content_secondary %}{% endblock %}
+          {%- block content_secondary_footer %}{% endblock content_secondary_footer -%}
         </div>
         <!-- /.nhsuk-grid-column-{{ _layout.content_secondary.width }} -->
       {% endif %}
