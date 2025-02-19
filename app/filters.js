@@ -62,6 +62,19 @@ export default (env) => {
     return Array.isArray(value);
   }
 
+  filters.isEmpty = function isEmpty(value) {
+    if (
+        value === undefined ||
+        value === null ||
+        (typeof value === "string" && value.trim() === "") ||
+        (Array.isArray(value) && value.length === 0) ||
+        (typeof value === "object" && Object.keys(value).length === 0)
+    ) {
+        return undefined;
+    }
+    return value;
+  }
+
   // Keep the following line to return your filters to the app
   return filters
 }
