@@ -28,7 +28,7 @@ router.post([
 // --------------------------------------------------------
 
 // if edge page requested anywhere in this app render the edge.html page
-router.get(/\/edge(\/|$)/, (req, res) => {
+router.get(/(^|\/)_edge(\/|$)/, (req, res) => {
   res.render('edge.html')
 })
 
