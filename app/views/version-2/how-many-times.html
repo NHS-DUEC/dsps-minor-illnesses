@@ -1,0 +1,36 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Have you been stung 10 or more times?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  callout: {
+    text: "We're checking for signs of an allergic reaction. This means stings from insects like wasps, bees or hornets or creatures like scorpions or jellyfish. We don't need to know about insect bites from mosquitoes, flies, lice, midges or ticks."
+  },
+  radios: {
+    items: [
+      {
+        text: 'Yes'
+      }, {
+        text: "I'm not sure"
+      }, {
+        text: 'No'
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file | d(layoutFile()) %}

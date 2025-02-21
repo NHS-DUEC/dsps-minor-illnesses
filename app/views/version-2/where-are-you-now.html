@@ -1,0 +1,36 @@
+{% set page = {
+  title: 'Where are you now?'
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_primary %}
+
+  <h1 class="nhsuk-heading-l">{{ page.title }}</h1>
+
+  {{
+    callout({
+      HTML: "<p>We need to know where you are so we can find services to help.</p>",
+      classes: "app-callout--info"
+    })
+  }}
+
+  <form method="post" novalidate="novalidate">
+
+    {{ input({
+          label: {
+            text: "Postcode"
+          },
+          decorate: 'postcode',
+          classes: "nhsuk-input--width-10"
+        }) }}
+
+    {{
+      button({
+        text: 'Next'
+      })
+    }}
+
+  </form>
+
+{% endblock content_primary %}

@@ -5,7 +5,7 @@
 {% macro service(params) %}
   {% call card({
       heading: params.name,
-      classes: 'app-card--service',
+      classes: 'app-card--service' + ' ' + params.classes if params.classes,
       href: params.href
     })
   %}
@@ -18,12 +18,12 @@
     </p>
     <p class="app-service__distance">{{ params.distance | d('0.7') }}
       miles away</p>
-    {{
+    {# {{
         tag({
           text: 'High street pharmacy',
           classes: 'nhsuk-tag--blue'
         })
-      }}
+      }} #}
     {# if address not passed #}
   {% else %}
     <p>You will contact this pharmacy to agree next steps.</p>

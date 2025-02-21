@@ -1,25 +1,15 @@
 import express from 'express'
 
-import { version1 } from './journeys.js'
+import { getJourney } from './journeys.js'
 
 const router = express.Router()
 
-// --------------------------------------------------------
-// version 1
-// --------------------------------------------------------
-
-router.all([
-  '/version-1/:view?',
-  '/version-1/:view/:view?'
-], (req, res, next) => {
-  res.locals.paths = version1(req)
+router.all(['/:version/:view?', '/:version/:view/:view?'], (req, res, next) => {
+  res.locals.paths = getJourney(req, req.params.version)
   next()
 })
 
-router.post([
-  '/version-1/:view?',
-  '/version-1/:view/:view?'
-], (req, res) => {
+router.post(['/:version/:view?', '/:version/:view/:view?'], (req, res) => {
   res.redirect(res.locals.paths.next)
 })
 

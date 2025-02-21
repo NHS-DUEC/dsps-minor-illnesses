@@ -1,0 +1,36 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Were you bitten or stung in the last 6 hours?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  callout: {
+    text: 'Most severe reactions will happen within 6 hours of being bitten or stung.'
+  },
+  radios: {
+    items: [
+      {
+        text: 'Yes'
+      }, {
+        text: "I'm not sure"
+      }, {
+        text: 'No'
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file | d(layoutFile()) %}

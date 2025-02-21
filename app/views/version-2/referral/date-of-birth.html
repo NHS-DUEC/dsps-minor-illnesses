@@ -1,0 +1,8 @@
+{% set page = {
+  title: 'What is your date of birth?',
+  layout: {
+    file: 'layouts/111-online/question/date.html'
+  }
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}

@@ -1,0 +1,22 @@
+{% set page = {
+  title: 'What is your name?',
+  layout: {
+    file: 'layouts/111-online/question/text-input.html'
+  }
+} %}
+
+{% set question = {
+  inputs: [
+    {
+      label: {
+        text: 'First name'
+      }
+    }, {
+      label: {
+        text: 'Last name'
+      }
+    }
+  ]
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}

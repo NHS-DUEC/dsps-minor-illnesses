@@ -1,0 +1,192 @@
+{% set page = {
+  title: 'Find the right topic',
+  layout: {
+    file: 'layouts/111-online/content-page.html'
+  }
+} %}
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_primary %}
+  <style type="text/css">
+    .nhsuk-u-font-size-16 app-u-color-secondary-text {
+      display: inline;
+    }
+  </style>
+
+  <div class="nhsuk-u-reading-width">
+
+    <h1>{{ page.title }}</h1>
+
+    <a role="button" href="search-az" class="nhsuk-button app-button--tertiary nhsuk-u-margin-bottom-4" data-module="nhsuk-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="app-button__icon" viewbox="0 0 18 18" aria-hidden="true" focusable="false" width="24" height="24">
+        <g stroke="#fff">
+          <path d="M12,12l5,5Z" stroke-linejoin="round" stroke-width="1.75"></path>
+          <circle cx="7" cy="7" r="6" fill="none" stroke-width="1.75"></circle>
+        </g>
+      </svg>
+      <span>Search our A to Z</span>
+    </a>
+
+    <h2>Browse categories</h2>
+
+    <h3>Parts of the body</h3>
+    <p style="color:#4c6272;">Choose the body part the symptom or injury affects.</p>
+    <ul class="nhsuk-list nhsuk-list--bullet">
+      <li>
+        <a href="./skin-hair-nails">Skin, hair and nails</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>13 topics<span aria-hidden="true">)</span></span>
+        <p class="nhsuk-u-margin-bottom-0">includes rashes, moles, bites and stings, small cuts and grazes</p>
+      </li>
+      <li>
+        <a href="head-face-neck">Head, face and neck</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>30 topics<span aria-hidden="true">)</span></span>
+        <p class="nhsuk-u-margin-bottom-0">includes eyes, ears, nose, mouth and throat</p>
+      </li>
+      <li>
+        <a href="arms">Shoulders, arms and hands</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>12 topics<span aria-hidden="true">)</span></span>
+        <p class="nhsuk-u-margin-bottom-0">includes shoulders, arms, wrists, hands and fingers</p>
+      </li>
+      <li>
+        <a href="upper-body">Chest, breast and back</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>13 topics<span aria-hidden="true">)</span></span>
+        <p class="nhsuk-u-margin-bottom-0">includes chest, breasts, nipples and back</p>
+      </li>
+      <li>
+        <a href="stomach-and-sides">Stomach and sides</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>11 topics<span aria-hidden="true">)</span></span>
+        <p class="nhsuk-u-margin-bottom-0">includes pain or injury and feeling or being sick</p>
+      </li>
+      <li>
+        <a href="lower-body">Genitals and bottom</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>21 topics<span aria-hidden="true">)</span></span>
+        <p class="nhsuk-u-margin-bottom-0">includes problems peeing or pooing and sexual health problems</p>
+      </li>
+      <li>
+        <a href="legs">Hips, legs and feet</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>11 topics<span aria-hidden="true">)</span></span>
+        <p class="nhsuk-u-margin-bottom-0">includes hips, groin, legs, ankles, feet and toes</p>
+      </li>
+    </ul>
+
+    <h3>Other problems</h3>
+    <p style="color:#4c6272;">Choose the one symptom that's bothering you most today.</p>
+
+    <ul>
+      <li>
+        <a href="accidental-swallowing-breathing">Accidental swallowing or breathing in</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>2 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="alcohol-substance-abuse">Alcohol and substance abuse</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>2 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="blood-pressure-problems">Blood pressure problems</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>1 topic<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="blood-oxygen-pulse-oximeter">Blood oxygen and pulse oximeter readings</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>1 topic<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="burns-scalds">Burns and scalds</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>3 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="catheters-stomas">Catheters and stomas</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>2 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="coughs-colds-breathing-problems">Coughs, colds and breathing problems</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>6 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="diabetes-blood-sugar-levels">Diabetes, blood sugar levels</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>1 topic<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="diarrhoea-sickness-vomiting">Diarrhoea, sickness and vomiting</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>4 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="dizziness-falls-faints-tremor">Dizziness, falls, faints and tremor (shaking)</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>3 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="high-temperature">High temperature</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>3 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="Menopause">Menopause</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>1 topic<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="mental-health">Mental health</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>5 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="palpitations">Palpitations</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>1 topic<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="period-problems">Period problems</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>3 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="pregnancy-and-breastfeeding">Pregnancy and breastfeeding</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>3 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="problems-with-peeing-or-pooing">Problems with peeing or pooing</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>5 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="wounds-injury">Problems with wound treatments, casts, metal frames and drains</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>2 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="sexual-health">Sexual health</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>3 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="sleep-problems">Sleep problems and feeling tired</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>2 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="sunburn-and-heatstroke">Sunburn and heatstroke</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>2 topics<span aria-hidden="true">)</span></span>
+      </li>
+      <li>
+        <a href="accidental-swallowing-breathing">Swallowing or breathing in something harmful</a>
+        <span class="nhsuk-u-font-size-16 app-u-color-secondary-text"><span aria-hidden="true">(</span>2 topics<span aria-hidden="true">)</span></span>
+      </li>
+    </ul>
+
+    <hr class="app-section-break">
+
+  </div>
+
+  <div class="nhsuk-u-reading-width">
+
+    <div class="callout callout--info">
+      <h3>If you cannot find the right topic</h3>
+      <p>
+        111 online can only help with the topics on this page.
+      </p>
+      <p>You can
+        <a href="search-az">search the same topics in our A to Z list instead</a>.</p>
+      <p>If you cannot find what you are looking for, you can:
+        <ul>
+          <li>
+            <a href="/edge">rule out the most serious conditions</a>
+          </li>
+          <li>
+            <a href="https://www.nhs.uk/conditions/">get information on a health problem or condition on the NHS website</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  {% endblock %}

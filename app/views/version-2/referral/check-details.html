@@ -1,0 +1,88 @@
+{% set page = {
+  title: 'Check details',
+  layout: {
+    file: 'layouts/111-online/check-answers.html'
+  }
+} %}
+
+{% set details = {
+  answers: {
+    rows: [
+      {
+        key: {
+          text: 'Name'
+        },
+        value: {
+          text: data['first-name'] | isEmpty | d(data.defaults['first-name']) + ' ' + data['last-name'] | d(data.defaults['last-name'])
+        },
+        actions: {
+          items: [
+            {
+              text: 'change',
+              href: 'name'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: 'Date of birth'
+        },
+        value: {
+          text: data.day | isEmpty | d(data.defaults.dob.day) + '/' + data.month | isEmpty | d(data.defaults.dob.month)  + '/' + data.year | isEmpty | d(data.defaults.dob.year)
+        },
+        actions: {
+          items: [
+            {
+              text: 'change',
+              href: 'date-of-birth'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: 'Phone number'
+        },
+        value: {
+          text: data['phone'] | isEmpty | d(data.defaults.phone)
+        },
+        actions: {
+          items: [
+            {
+              text: 'change',
+              href: 'phone-number'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: 'Postcode'
+        },
+        value: {
+          text: data['postcode'] | isEmpty | d(data.defaults.postcode)
+        },
+        actions: {
+          items: [
+            {
+              text: 'change',
+              href: 'home-postcode'
+            }
+          ]
+        }
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Confirm'
+    }
+  }
+} %}
+
+{% block check_answers_footer %}
+  <p>You must be in England to use this service. By confirming these details you agree to share them with the service.</p>
+{% endblock %}
+
+{% extends page.layout.file | d(layoutFile()) %}
