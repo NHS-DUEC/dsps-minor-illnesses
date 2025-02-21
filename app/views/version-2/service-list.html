@@ -46,7 +46,8 @@
         appService({
           name: 'Drugs4Delivery',
           href: 'referral/name',
-          classes: 'nhsuk-u-margin-bottom-0--desktop'
+          classes: 'nhsuk-u-margin-bottom-0--desktop',
+          version: 2
         })
       }}
     </li>
@@ -54,19 +55,3 @@
   </ul>
 
 {% endblock content_body %}
-
-{% block content_footer %}
-  {% set detailsHTML %}
-  <p>Online pharmacies mostly offer consultations over video or the phone. Rarely, you might be asked to visit their local premises.</p>
-  {% endset %}
-
-  <div class="nhsuk-expander-group">
-    {{
-    details({
-      text: 'What is an online pharmacy?',
-      HTML: detailsHTML,
-      open: closed
-    })
-  }}
-  </div>
-{% endblock content_footer %}
