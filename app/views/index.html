@@ -16,6 +16,33 @@
 
 {% block content_primary %}
 
+  <h2 class="nhsuk-heading-m">Version 3</h2>
+
+  {% set version3 = [
+    {
+      text: 'Start',
+      href: './version-3/start'
+    }, {
+      text: 'Get help today (disposition)',
+      href: './version-3/disposition'
+    }, {
+      text: 'Select a pharmacy (service list)',
+      href: './version-3/service-list'
+    }, {
+      text: 'Confirmation - High street pharmacy',
+      href: './version-3/confirmation-high-street-pharmacy.html'
+    }, {
+      text: 'Confirmation - Online pharmacy',
+      href: './version-3/confirmation-online-pharmacy.html'
+    }
+  ] %}
+
+  {{
+    contentsList({
+      items: version3
+    })
+  }}
+
   <h2 class="nhsuk-heading-m">Version 2</h2>
 
   {% set version2 = [
