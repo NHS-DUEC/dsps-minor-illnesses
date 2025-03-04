@@ -1,0 +1,39 @@
+{% set page = {
+  title: 'Sorry, there is a problem with the service',
+  layout: {
+    file: "layouts/111-online/content-page.html"
+  }
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_primary %}
+
+  <h1>{{ page.title }}</h1>
+
+  <p>We could not send your details.</p>
+
+  <p>You can still phone the pharmacy for advice and medicine without a referral</p>
+
+  {% set cardHTML %}
+  <p>You can call today between 8:30am to 6:00pm</p>
+  <div class="nhsuk-heading-xl">
+    <a href="tel:+441611234567">0161 123 4567</a>
+  </div>
+  {% endset %}
+
+  {{
+    card({
+      heading: 'Drugs4Delivery',
+      HTML: cardHTML
+    })
+  }}
+
+  <hr class="app-section-break">
+
+  <h3>Other services that can help</h3>
+
+  <p>If you do not want to use this service, you can
+    <a href="">go back and see other things you can do</a>.</p>
+
+{% endblock %}

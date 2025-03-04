@@ -1,0 +1,89 @@
+{% extends 'layouts/default.html' %}
+
+{% block page_title %}Stomach and sides - NHS 111 online{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+  <div class="content-block measure">
+
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="index">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Back to categories</a>
+    </div>
+
+    <h1 class="nhsuk-heading-xl">
+      Stomach and sides
+      <!--<span class="nhsuk-caption-l"> includes lower back, stomach and sides, genitals, bottom, legs and feet </span>-->
+    </h1>
+
+    <form action="/triage/categories-results-links" method="post">
+
+      <ol class="nhsuk-list subcats">
+
+        <li>
+          <a href="_edge">
+            Diarrhoea and vomiting
+          </a><br>
+          <p>
+            Runny or watery poo and being sick, with or without tummy pain.
+          </span>
+        </li>
+
+        <li>
+          <a href="_edge">
+            Pain in the side of the body
+          </a><br>
+          <p>
+            Pain on either side of the body, between the ribs and hips. Affecting one side only at the back (love handles) or with stomach pain.
+          </span>
+        </li>
+
+        <li>
+          <a href="_edge">Stomach ache or pain</a>
+          <span class="nhsuk-hint nhsuk-u-font-size-16 nhsuk-u-margin-bottom-0">
+            Checks for things like: indigestion, heartburn, food poisoning, stomach ulcer, gallstones, kidney stones
+          </span>
+          <p>
+            Tummy pain with or without symptoms such as being sick, diarrhoea or a high temperature. Trapped wind. Abdominal pain. Swollen stomach.
+          </span>
+        </li>
+
+        <li>
+          <a href="_edge">
+            Stomach or side injury
+          </a><br>
+          <p>
+            An injury to the tummy, stomach or sides within the last 7 days that hasn't cut the skin. Stomach injury, flank injury.
+          </span>
+        </li>
+
+        <li>
+          <a href="_edge">
+            Stomach or side injury with a cut or wound
+          </a><br>
+          <p>
+            A wound to the tummy, stomach or side within the last 7 days. Flank injury. Stomach injury.
+          </span>
+        </li>
+
+        <li>
+          <a href="_edge">
+            Vomiting or nausea
+          </a><br>
+          <p>
+            Being or feeling sick.
+          </span>
+        </li>
+      </ol>
+    </form>
+
+  </div>
+
+{% endblock %}
+
+{% block body_after %}{% endblock %}

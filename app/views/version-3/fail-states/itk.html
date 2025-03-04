@@ -1,0 +1,73 @@
+{% set page = {
+  title: 'We have sent your details',
+  layout: {
+    file: "layouts/111-online/content-page.html"
+  }
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_primary %}
+
+  <h1>{{ page.title }}</h1>
+
+  <p>We have sent information about your problem to the pharmacy.</p>
+  <p>We have also sent a confirmation to
+    {{ data.phone | d(data.defaults.phone) }}
+    and
+    {{ data.email | d(data.defaults.email) }}</p>
+
+  <h2>What to do next</h2>
+
+  <p>You can arrange a consultation at a time that suits you.
+  </p>
+
+  <p>You can either:</p>
+
+  <ul>
+    <li>go to the pharmacy in person</li>
+    <li>call the pharmacy</li>
+  </ul>
+
+  <p>You need to tell them you were referred by 111 online.</p>
+
+  <h3>If you call the pharmacy</h3>
+
+  <p>You can ask for phone consultation if you would prefer one.</p>
+  <p>You may still need to go to the pharmacy in person if:</p>
+  <ul>
+    <li>the pharmacy is too busy to answer the phone</li>
+    <li>you have a problem the pharmacist would like to see in person, like a rash</li>
+  </ul>
+
+  <div class="app-service-details">
+    <div class="app-service-details__content">
+
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-0">Boots Pharmacy</h3>
+      <span class="nhsuk-u-visually-hidden">
+        -
+      </span>
+      <br aria-hidden="true">
+      <p data-test-id="service-detail-address">
+        Churchview Health Centre
+        <br>
+        Cartergate
+        <br>
+        Grimsby
+        <br>
+        DN31 1QZ
+        <br>
+      </p>
+
+      <p data-test-id="opening-time-text">Open today: 24 hours</p>
+
+      <p data-test-id="miles-away-text">0.7 miles away</p>
+
+    </div>
+
+    <div class="app-service-details__map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.1137069554634!2d-0.07734354869583134!3d51.47442712083449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760375dc99f1cd%3A0xef60a454077bb084!2sDay%20Lewis%20Chemist!5e0!3m2!1sen!2suk!4v1635433296756!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+{% endblock %}

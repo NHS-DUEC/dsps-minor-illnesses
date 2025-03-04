@@ -11,7 +11,7 @@
   %}
   {% if params.version %}
 
-    {% if params.version == 2 %}
+    {% if params.version == 2 or params.version == 3 %}
 
       {% if params.address %}
         <p class="app-address app-service__address">
@@ -31,15 +31,15 @@
       }} #}
         {# if address not passed #}
       {% else %}
-        {# <p class="nhsuk-u-margin-bottom-3">
+        <p class="nhsuk-u-margin-bottom-4">
           {{
-          tag({
-            text: 'Online pharmacy',
-            classes: 'nhsuk-tag--blue'
-          })
-                }}
-        </p> #}
-        <p class="nhsuk-u-margin-bottom-x">Opening times: 8:00am to 6:00pm</p>
+            tag({
+              text: 'Online pharmacy',
+              classes: 'nhsuk-tag--blue'
+            })
+          }}
+        </p>
+        <p class="app-service__opening-times">Open today: 08:30am - 6:00pm</p>
         <hr class="nhsuk-section-break nhsuk-section-break--visible nhsuk-u-margin-bottom-4">
         <p class="nhsuk-body-s">Online pharmacies mostly offer consultations over video or the phone.
         </p>
@@ -68,7 +68,7 @@
       {# if address not passed #}
     {% else %}
       <p>You will contact this pharmacy to agree next steps.</p>
-      <p>Opening time: 8:00am to 6:00pm</p>
+      <p class="app-service__opening-times">Open today: 08:30am - 6:00pm</p>
       {{
         tag({
           text: 'Online pharmacy with video',

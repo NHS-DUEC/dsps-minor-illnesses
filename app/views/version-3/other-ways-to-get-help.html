@@ -1,0 +1,148 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Other ways to get help',
+  layout: {
+    file: 'layouts/111-online/default.html'
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_body %}
+
+  <h1 class="nhsuk-heading-xl">{{ page.title }}</h1>
+
+  {{
+    callout({
+      text: 'Get help today or tomorrow',
+      classes: 'app-callout--warning'
+    })
+  }}
+
+  <p>Showing
+    <strong>2</strong>
+    services are available in
+    {{ data.postcode | d(data.defaults.postcode) }}
+    <br>
+    <a href="edge">Change my location</a>
+  </p>
+
+  <hr class="app-section-break app-section-break--thin-wide">
+
+  <ul class="nhsuk-list">
+    <li class="app-section-break app-section-break--thin-wide">
+
+      <div>
+        <div class="nhsuk-u-reading-width">
+
+          <h3>
+            Pharmacist consultation service
+          </h3>
+
+          <form method="post">
+
+            <details class="nhsuk-details" open="true">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">How can the pharmacist consultation service help?</span>
+              </summary>
+              <div class="nhsuk-details__text">
+
+                <p>Refer yourself to a pharmacist for a one-to-one consultation in a private room, over video or on the phone.</p>
+                <p>You can get advice, treatment or a referral to another NHS service. If appropriate, pharmacists may give antibiotics for a small number of conditions.</p>
+
+              </div>
+            </details>
+
+            <p class="nhsuk-hint">This service needs some more details from you to find your NHS number.</p>
+
+            {{
+              actionLink({
+                text: "Refer me to a pharmacist",
+                href: "service-list"
+              })
+            }}
+
+          </form>
+        </div>
+      </div>
+
+    </li>
+    <li class="app-section-break app-section-break--thin-wide">
+
+      <div>
+        <div class="nhsuk-u-reading-width" data-test-id="service-details-2000004952" data-visible-service-id="2000004952">
+          <input type="hidden" value="GoTo" data-test-id="online-service-type-id">
+
+          <h3 data-test-id="service-summary-header">
+            <span data-test-id="service-alias">Urgent treatment centre</span>
+
+            <span class="nhsuk-u-visually-hidden">
+              -
+            </span>
+            <br aria-hidden="true">
+            <span data-test-id="service-name" class="nhsuk-u-font-size-19 nhsuk-u-font-weight-normal">Urgent Treatment Centre Bath</span>
+          </h3>
+
+          <details data-test-id="servicetype-description" class="nhsuk-details ">
+            <summary class="nhsuk-details__summary" data-event-trigger="click" data-event-value="How can an urgent treatment centre help">
+              <span class="nhsuk-details__summary-text">How can an urgent treatment centre help?</span></summary>
+            <div class="nhsuk-details__text">
+              <p data-test-id="servicetype-description-text">Urgent treatment centres are open for at least 12 hours every day. They can diagnose and deal with many of the most common problems people go to A&amp;E for.</p>
+            </div>
+          </details>
+
+          <p data-test-id="opening-time-text">Open today: 8:00am until 10:00pm</p>
+
+          <p data-test-id="miles-away-text">4.5 miles away</p>
+
+          {{
+            actionLink({
+              text: "Refer me to a pharmacist",
+              href: "service-list"
+            })
+          }}
+
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
+  {# <div class="app-section-break app-section-break--thin-wide"></div>
+
+  <h3 class="nhsuk-heading-m">Pharmacist consultation service</h3>
+
+  <p>A pharmacist can help with your symptoms. You can refer yourself to a pharmacist to arrange a one-to-one consultation. Choose a pharmacist to visit, or have a video or phone consultation.
+  </p>
+  <p>This service needs some more details from you to find your NHS number.
+  </p>
+  <p class="nhsuk-u-margin-bottom-5">We will send your referral to the pharmacist so they are prepared.</p>
+
+  {{
+    actionLink({
+      text: "Refer me to a pharmacist",
+      href: "service-list"
+    })
+  }}
+
+  <hr class="app-section-break nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-4">
+
+  {% set detailsHTML %}
+  <p>Pharmacists are trained to deal with minor illnesses and common conditions.
+  </p>
+  <p>You can get advice, treatment or referral to another NHS service if needed.
+  </p>
+  <p>If appropriate, pharmacists can prescribe antibiotics or antivirals for a small number of common conditions.</p>
+  {% endset %}
+
+  {{
+    details({
+      text: "Why should I use the pharmacist consultation service?",
+      HTML: detailsHTML
+    })
+  }} #}
+
+{% endblock content_body %}

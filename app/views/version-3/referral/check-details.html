@@ -1,0 +1,97 @@
+{% set page = {
+  title: 'Confirm your referral',
+  layout: {
+    file: 'layouts/111-online/check-answers.html'
+  }
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% set details = {
+  answers: {
+    rows: [
+      {
+        key: {
+          text: 'Name'
+        },
+        value: {
+          text: data['first-name'] | isEmpty | d(data.defaults['first-name']) + ' ' + data['last-name'] | isEmpty | d(data.defaults['last-name'])
+        }
+      },
+      {
+        key: {
+          text: 'Date of birth'
+        },
+        value: {
+          text: data.day | isEmpty | d(data.defaults.dob.day) + '/' + data.month | isEmpty | d(data.defaults.dob.month)  + '/' + data.year | isEmpty | d(data.defaults.dob.year)
+        }
+      },
+      {
+        key: {
+          text: 'Phone number'
+        },
+        value: {
+          text: data['phone'] | isEmpty | d(data.defaults.phone)
+        }
+      },
+      {
+        key: {
+          text: 'Postcode'
+        },
+        value: {
+          text: data['postcode'] | isEmpty | d(data.defaults.postcode)
+        }
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Confirm referral'
+    }
+  }
+} %}
+
+{% block check_answers_header %}
+
+  <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Pharmacy consulation service</h3>
+
+  {% if data.pharm == 'highstreet' %}
+
+    <p>
+      Boots Pharmacy
+      <br>
+      Churchview Health Centre
+      <br>
+      Cartergate
+      <br>
+      Grimsby
+      <br>
+      DN31 1QZ
+      <br>
+    </p>
+
+  {% else %}
+
+    <p class="nhsuk-u-margin-bottom-5">Drugs4Delivery</p>
+
+    {# {{
+      tag({
+        text: 'Online pharmacy',
+        classes: 'nhsuk-tag--blue nhsuk-u-margin-bottom-3'
+      })
+    }} #}
+
+  {% endif %}
+
+  <hr class="nhsuk-section-break nhsuk-section-break--visible nhsuk-section-break--m">
+
+{% endblock %}
+
+{% block check_answers_footer %}
+
+  <p>
+    <a href="edge">Change these details</a>
+  </p>
+
+  <p>You must be in England to use this service. By confirming these details you agree to share them with the service.</p>
+{% endblock %}

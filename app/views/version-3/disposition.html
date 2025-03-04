@@ -1,0 +1,59 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Get help today',
+  layout: {
+    file: 'layouts/111-online/disposition.html'
+  }
+} %}
+
+{# Content configuration
+---------------------------------------------------- #}
+
+{% set disposition = {
+  callToAction: {
+    text: page.title
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_disposition %}
+
+  <h2 class="nhsuk-heading-l">Recommended service</h2>
+
+  <h3 class="nhsuk-heading-m">Pharmacist consultation service</h3>
+
+  <p>A pharmacist can help with your symptoms. You can refer yourself to a pharmacist to arrange a one-to-one consultation. Choose a pharmacist to visit, or have a video or phone consultation.
+  </p>
+  <p>This service needs some more details from you to find your NHS number.
+  </p>
+  <p class="nhsuk-u-margin-bottom-5">We will send your referral to the pharmacist so they are prepared.</p>
+
+  {{
+    actionLink({
+      text: "Refer me to a pharmacist",
+      href: "service-list"
+    })
+  }}
+
+  <hr class="app-section-break nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-4">
+
+  {% set detailsHTML %}
+  <p>Pharmacists are trained to deal with minor illnesses and common conditions.
+  </p>
+  <p>You can get advice, treatment or referral to another NHS service if needed.
+  </p>
+  <p>If appropriate, pharmacists can prescribe antibiotics or antivirals for a small number of common conditions.</p>
+  {% endset %}
+
+  {{
+    details({
+      text: "Why should I use the pharmacist consultation service?",
+      HTML: detailsHTML
+    })
+  }}
+
+{% endblock content_disposition %}

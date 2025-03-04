@@ -1,0 +1,42 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'What was your sex at birth?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{% set calloutContent %}
+<p>This online triage depends on knowing your registered sex at birth, not your gender identity.</p>
+<p>If you are doing this for someone else, tell us their sex at birth if you know.</p>
+<p>We need to know this information so we can ask relevant clinical questions.</p>
+<p>If you feel uncomfortable giving this information, or do not see an option that represents you correctly, you can call 111 to talk to a nurse.</p>
+{% endset %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  callout: {
+    html: calloutContent,
+    position: 'bottom'
+  },
+  radios: {
+    items: [
+      {
+        text: 'Male'
+      }, {
+        text: "Female"
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file | d(layoutFile()) %}

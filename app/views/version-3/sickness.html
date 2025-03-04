@@ -1,0 +1,33 @@
+{# Page configuration
+---------------------------------------------------- #}
+{% set page = {
+  title: 'Are you feeling sick or being sick (vomiting) now?',
+  layout: {
+    file: 'layouts/111-online/question/radio.html'
+  }
+} %}
+
+{# Question and content configuration
+---------------------------------------------------- #}
+{% set question = {
+  radios: {
+    items: [
+      {
+        text: 'Yes'
+      }, {
+        text: "I'm not sure"
+      }, {
+        text: 'No'
+      }
+    ]
+  },
+  actions: {
+    button: {
+      text: 'Next'
+    }
+  }
+} %}
+
+{# This sets which layout file to use
+---------------------------------------------------- #}
+{% extends page.layout.file | d(layoutFile()) %}

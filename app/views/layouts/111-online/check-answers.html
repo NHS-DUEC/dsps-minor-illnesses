@@ -20,7 +20,7 @@
       {% if details.actions.button %}
         {{
         button({
-          text: 'Confirm'
+          text: details.actions.button.text | d('Confirm')
         })
       }}
       {% endif %}

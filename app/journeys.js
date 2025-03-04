@@ -50,6 +50,29 @@ journeys['version-2'] = {
   '/version-2/confirmation-online-pharmacy': {}
 }
 
+journeys['version-3'] = {
+  '/version-3/where-are-you-now': {},
+  '/version-3/age': {},
+  '/version-3/sex': {},
+  '/version-3/categories/index': {},
+  '/version-3/weirdq': {},
+  '/version-3/cause': {},
+  '/version-3/timeframe': {},
+  '/version-3/how-many-times': {},
+  '/version-3/sickness': {},
+  '/version-3/where-bitten': {},
+  '/version-3/temperature': {},
+  '/version-3/change-in-wound': {},
+  '/version-3/do-these-apply': {},
+  '/version-3/disposition': {},
+  '/version-3/referral/name': {},
+  '/version-3/referral/date-of-birth': {},
+  '/version-3/referral/phone-number': {},
+  '/version-3/referral/home-postcode': {},
+  '/version-3/referral/check-details': {},
+  '/version-3/confirmation-online-pharmacy': {}
+}
+
 // examples notation for wizzard routing journey object
 journeys.example = {
   '/path': {

@@ -1,0 +1,57 @@
+{% set page = {
+  title: 'Select a pharmacy',
+  layout: {
+    file: 'layouts/111-online/service-list.html',
+    content_secondary: {
+      visible: true
+    }
+  }
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_header %}
+
+  {# from layout #}
+  {{ super() }}
+
+  <p>These are 2 of 2 services available in
+    {{ data.postcode | d('A12 3BC') | upper }}</p>
+
+{% endblock content_header %}
+
+{% block content_body %}
+
+  <ul class="nhsuk-grid-row nhsuk-card-group nhsuk-u-margin-bottom-4">
+
+    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+
+      {{
+        appService({
+          name: 'Boots Pharmacy',
+          href: 'confirmation-high-street-pharmacy?pharm=highstreet',
+          address: {
+            line1: 'Churchview Health Centre',
+            line2: 'Cartergate',
+            line3: 'Grimsby',
+            postcode: 'DN31 1QZ'
+          },
+          version: 3
+        })
+      }}
+
+    </li>
+
+    <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+      {{
+        appService({
+          name: 'Drugs4Delivery',
+          href: 'referral/name?pharm=online',
+          version: 3
+        })
+      }}
+    </li>
+
+  </ul>
+
+{% endblock content_body %}

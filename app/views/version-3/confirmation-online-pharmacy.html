@@ -1,0 +1,52 @@
+{% set page = {
+  title: 'Contact the pharmacy today or tomorrow',
+  layout: {
+    file: "layouts/111-online/content-page.html"
+  }
+} %}
+
+{% extends page.layout.file | d(layoutFile()) %}
+
+{% block content_primary %}
+
+  <h1>{{ page.title }}</h1>
+
+  <p class="nhsuk-lead">We have sent your details to the pharmacy.</p>
+
+  <h2>What to do next</h2>
+
+  <p>You can arrange a consultation for a time that suits you.</p>
+
+  <p>You need to tell them you were referred by 111 online.</p>
+
+  {{
+    callout({
+      text: 'The consultation will usually be over video, but you can ask for a phone consultation if you prefer.',
+      classes: 'app-callout--info'
+    })
+  }}
+
+  <p>If the pharmacist cannot get the information they need over video they might ask to see you in person. They will explain how that will happen.</p>
+
+  <p>This might be:</p>
+
+  <ul>
+    <li>visiting their local site to have a consultation in a private room</li>
+    <li>being referred on to another local pharmacy in your area</li>
+  </ul>
+
+  {% set cardHTML %}
+  <p>You can call today between 8:30am to 6:00pm</p>
+  <div class="nhsuk-heading-xl">
+    <a href="tel:+441611234567">0161 123 4567</a>
+  </div>
+  {% endset %}
+
+  {{
+    card({
+      heading: 'Drugs4Delivery',
+      HTML: cardHTML
+    })
+  }}
+
+{% endblock %}
